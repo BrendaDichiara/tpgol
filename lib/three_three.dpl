@@ -10,7 +10,7 @@ Coupled
         Dimension = 600; 600
         Direction = Right
         Color = 15
-        Icon =  %conways%basic.bmp
+        Icon =  None
         Window = 5000; 5000; 5000; 5000
         }
     Parameters
@@ -22,7 +22,7 @@ Coupled
             {
             Name = Sender
             Ports = 1 ; 1
-            Path = random/three_d.h
+            Path = gol/cell.h
             Description = Atomic DEVS model
             Graphic
                 {
@@ -42,7 +42,7 @@ Coupled
             {
             Name = Mediator
 	    Ports = 9 ; 1
-            Path = random/mediator.h
+            Path = gol/mediator.h
             Description = Atomic DEVS model
             Graphic
                 {
@@ -81,7 +81,7 @@ Coupled
                     {
                     Name = SENDER1
                     Ports = 1 ; 1
-                    Path = random/three_d.h
+                    Path = gol/cell.h
                     Description = Atomic DEVS model
                     Graphic
                         {
@@ -101,7 +101,7 @@ Coupled
                     {
                     Name = SENDER2
                     Ports = 1 ; 1
-                    Path = random/three_d.h
+                    Path = gol/cell.h
                     Description = Atomic DEVS model
                     Graphic
                         {
@@ -121,7 +121,7 @@ Coupled
                     {
                     Name = SENDER3
                     Ports = 1 ; 1
-                    Path = random/three_d.h
+                    Path = gol/cell.h
                     Description = Atomic DEVS model
                     Graphic
                         {
@@ -141,7 +141,7 @@ Coupled
                     {
                     Name = SENDER4
                     Ports = 1 ; 1
-                    Path = random/three_d.h
+                    Path = gol/cell.h
                     Description = Atomic DEVS model
                     Graphic
                         {
@@ -161,7 +161,7 @@ Coupled
                     {
                     Name = SENDER5
                     Ports = 1 ; 1
-                    Path = random/three_d.h
+                    Path = gol/cell.h
                     Description = Atomic DEVS model
                     Graphic
                         {
@@ -181,7 +181,7 @@ Coupled
                     {
                     Name = SENDER6
                     Ports = 1 ; 1
-                    Path = random/three_d.h
+                    Path = gol/cell.h
                     Description = Atomic DEVS model
                     Graphic
                         {
@@ -201,7 +201,7 @@ Coupled
                     {
                     Name = SENDER7
                     Ports = 1 ; 1
-                    Path = random/three_d.h
+                    Path = gol/cell.h
                     Description = Atomic DEVS model
                     Graphic
                         {
@@ -221,7 +221,7 @@ Coupled
                     {
                     Name = SENDER8
                     Ports = 1 ; 1
-                    Path = random/three_d.h
+                    Path = gol/cell.h
                     Description = Atomic DEVS model
                     Graphic
                         {
@@ -241,7 +241,7 @@ Coupled
                     {
                     Name = MEDIATOR
                     Ports = 9 ; 1
-                    Path = random/mediator.h
+                    Path = gol/mediator.h
                     Description = Atomic DEVS model
                     Graphic
                         {
@@ -260,7 +260,7 @@ Coupled
                     {
                     Name = SENDER0
                     Ports = 1 ; 1
-                    Path = random/three_d.h
+                    Path = gol/cell.h
                     Description = Atomic DEVS model
                     Graphic
                         {
