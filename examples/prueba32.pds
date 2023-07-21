@@ -1,0 +1,95 @@
+Root-Coordinator
+ {
+    Coordinator
+     {
+      Simulator
+       {
+        Path = gol/mediator.h
+        Parameters = "initial"
+       }
+      Simulator
+       {
+        Path = gol/cell.h
+        Parameters = "0"
+       }
+      Simulator
+       {
+        Path = gol/cell.h
+        Parameters = "1"
+       }
+      Simulator
+       {
+        Path = gol/cell.h
+        Parameters = "2"
+       }
+      Simulator
+       {
+        Path = gol/cell.h
+        Parameters = "3"
+       }
+      Simulator
+       {
+        Path = gol/cell.h
+        Parameters = "4"
+       }
+      Simulator
+       {
+        Path = gol/cell.h
+        Parameters = "5"
+       }
+      Simulator
+       {
+        Path = gol/cell.h
+        Parameters = "6"
+       }
+      Simulator
+       {
+        Path = gol/cell.h
+        Parameters = "7"
+       }
+      Simulator
+       {
+        Path = gol/cell.h
+        Parameters = "8"
+       }
+      EIC
+       {
+       }
+      EOC
+       {
+       }
+      IC
+       {
+        (9,0);(0,8)
+        (3,0);(0,2)
+        (6,0);(0,5)
+        (7,0);(0,6)
+        (8,0);(0,7)
+        (5,0);(0,4)
+        (4,0);(0,3)
+        (2,0);(0,1)
+        (1,0);(0,0)
+        (0,0);(2,0)
+        (0,0);(6,0)
+        (0,0);(4,0)
+        (0,0);(3,0)
+        (0,0);(5,0)
+        (0,0);(7,0)
+        (0,0);(8,0)
+        (0,0);(9,0)
+        (0,0);(2,0)
+        (0,0);(4,0)
+        (0,0);(3,0)
+        (0,0);(5,0)
+       }
+     }
+  EIC
+   {
+   }
+  EOC
+   {
+   }
+  IC
+   {
+   }
+ }
