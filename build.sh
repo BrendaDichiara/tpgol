@@ -7,3 +7,4 @@ cp atomics/* ../atomics/gol
 cp examples/* ../examples/gol
 cp patterns/* ../patterns
 cp lib/* ../library/gol
+cp powerdevs.ini ../bin

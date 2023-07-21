@@ -12,7 +12,7 @@ va_start(parameters,t);
 char* file_name_raw = va_arg(parameters, char*);
 
 std::ifstream file;
-std::string file_name = "../tpgol/patterns/" + std::string(file_name_raw) + ".txt";
+std::string file_name = "../patterns/" + std::string(file_name_raw) + ".txt";
 //printLog("nombre %s", file_name.c_str());
 
 file.open(file_name.data());

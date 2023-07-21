@@ -34,8 +34,7 @@ Coupled
                 }
             Parameters
                 {
-		        vida = Str; 1 ; 
-                CID = Str; 1 ; 0
+                CID = Str; 1 ; int
                 }
             }
     Atomic
@@ -54,7 +53,7 @@ Coupled
                 }
             Parameters
                 {
-		size = Str; 3 ; 3
+                filename = Str; initial ; str
                 }
             }        
         Coupled
@@ -93,7 +92,6 @@ Coupled
                         }
                     Parameters
                         {
-                        vida = Str; 1 ; 
                         CID = Str; 1 ; 0
                         }
                     }
@@ -113,7 +111,6 @@ Coupled
                         }
                     Parameters
                         {
-                        vida = Str; 0 ; 
                         CID = Str; 2 ; 0
                         }
                     }
@@ -133,7 +130,6 @@ Coupled
                         }
                     Parameters
                         {
-                        vida = Str; 0 ; 
                         CID = Str; 3 ; 0
                         }
                     }
@@ -153,7 +149,6 @@ Coupled
                         }
                     Parameters
                         {
-                        vida = Str; 1 ; 
                         CID = Str; 4 ; 0
                         }
                     }
@@ -173,7 +168,6 @@ Coupled
                         }
                     Parameters
                         {
-                        vida = Str; 0 ; 
                         CID = Str; 5 ; 0
                         }
                     }
@@ -193,7 +187,6 @@ Coupled
                         }
                     Parameters
                         {
-                        vida = Str; 0 ; 
                         CID = Str; 6 ; 0
                         }
                     }
@@ -213,7 +206,6 @@ Coupled
                         }
                     Parameters
                         {
-                        vida = Str; 1 ; 
                         CID = Str; 7 ; 0
                         }
                     }
@@ -233,7 +225,6 @@ Coupled
                         }
                     Parameters
                         {
-                        vida = Str; 0 ; 
                         CID = Str; 8 ; 0
                         }
                     }
@@ -253,7 +244,7 @@ Coupled
                         }
                     Parameters
                         {
-                        size = Str; 3 ; 3
+                        filename = Str; initial ; str
                         }
                     }
                 Atomic
@@ -272,7 +263,6 @@ Coupled
                         }
                     Parameters
                         {
-                        vida = Str; 1 ; 
                         CID = Str; 1 ; 0
                         }
                     }
