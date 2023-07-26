@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import ttk, filedialog
+from tkinter import ttk, filedialog, Toplevel
 import webbrowser
 
 class Grid:
@@ -42,15 +42,10 @@ class Application:
         self.tab1 = ttk.Frame(self.tab_control)
         self.tab2 = ttk.Frame(self.tab_control)
         self.tab3 = ttk.Frame(self.tab_control)
-        self.tab4 = ttk.Frame(self.tab_control)
-        self.tab5 = ttk.Frame(self.tab_control)
 
         self.tab_control.add(self.tab3, text='Configuración del Proyecto')
         self.tab_control.add(self.tab1, text='Crear Estado Inicial')
         self.tab_control.add(self.tab2, text='Crear Esquema PDM')
-        self.tab_control.add(self.tab4, text='Help')
-        self.tab_control.add(self.tab5, text='Generar Gifs/Videos')
-
 
         self.label_rows = tk.Label(self.tab1, text="Filas (N):")
         self.label_cols = tk.Label(self.tab1, text="Columnas (N):")
@@ -85,12 +80,9 @@ class Application:
         self.button_set_powerdevs.pack()
         self.button_reset_original.pack()
 
-        # Add Help menu
-        self.help_menu = tk.Menu(master)
-        self.help_menu.add_command(label='Guía de uso', command=self.open_help)
-        self.help_menu.add_command(label='Acerca de', command=self.open_about)
-
-        master.config(menu=self.help_menu)
+        # Add Help button to the main window
+        self.button_help = tk.Button(master, text='Ayuda', command=self.open_help_window)
+        self.button_help.pack()
 
         self.tab_control.pack(expand=1, fill='both')
 
@@ -119,7 +111,18 @@ class Application:
         print("Resetting to original version...")
         # Add your code here
 
-    # Functions for the Help menu
+    # Function for the Help button
+    def open_help_window(self):
+        help_window = Toplevel(self.master)
+        help_window.title('Ayuda')
+
+        guide_button = tk.Button(help_window, text='Guía de uso', command=self.open_help)
+        about_button = tk.Button(help_window, text='Acerca de', command=self.open_about)
+
+        guide_button.pack()
+        about_button.pack()
+
+    # Functions for the Help window buttons
     def open_help(self):
         print("Opening help...")
         # Replace with the web address of your user guide
