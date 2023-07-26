@@ -42,10 +42,12 @@ class Application:
         self.tab1 = ttk.Frame(self.tab_control)
         self.tab2 = ttk.Frame(self.tab_control)
         self.tab3 = ttk.Frame(self.tab_control)
+        self.tab_help = ttk.Frame(self.tab_control)
 
         self.tab_control.add(self.tab3, text='Configuración del Proyecto')
         self.tab_control.add(self.tab1, text='Crear Estado Inicial')
         self.tab_control.add(self.tab2, text='Crear Esquema PDM')
+        self.tab_control.add(self.tab_help, text='Ayuda')
 
         self.label_rows = tk.Label(self.tab1, text="Filas (N):")
         self.label_cols = tk.Label(self.tab1, text="Columnas (N):")
@@ -80,9 +82,8 @@ class Application:
         self.button_set_powerdevs.pack()
         self.button_reset_original.pack()
 
-        # Add Help button to the main window
-        self.button_help = tk.Button(master, text='Ayuda', command=self.open_help_window)
-        self.button_help.pack()
+        # Bind the tab selected event
+        self.tab_control.bind("<<NotebookTabChanged>>", self.tab_changed)
 
         self.tab_control.pack(expand=1, fill='both')
 
@@ -131,6 +132,14 @@ class Application:
     def open_about(self):
         print("Opening about...")
         # Add your code here
+
+    # Function to handle tab change
+    def tab_changed(self, event):
+        selected_tab = event.widget.select()
+        tab_text = event.widget.tab(selected_tab, "text")
+
+        if tab_text == "Ayuda":
+            self.open_help_window()
 
 root = tk.Tk()
 app = Application(root)
