@@ -1,0 +1,1941 @@
+Coupled
+    {
+    Type = Root
+    Name = prueba_10x10
+    Ports = 0; 0
+    Description = 
+    Graphic
+        {
+        Position = 0; 0
+        Dimension = 600; 600
+        Direction = Right
+        Color = 15
+        Icon = 
+        Window = 5000; 5000; 5000; 5000
+        }
+    Parameters
+        {
+        }
+    System
+        {
+		Atomic
+            {
+            Name = Mediator0
+            Ports = 100 ; 1
+            Path = gol/mediator.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -15780 ; -8850
+                Dimension = 675 ; 1350
+                Direction = Right
+                Color = 4
+                Icon = None
+                }
+            Parameters
+                {
+                filename = Str; initial ; str
+                }
+            }
+		Atomic
+            {
+            Name = Sender0
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; -9510
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 0 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender1
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; -8085
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 1 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender2
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; -6660
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 2 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender3
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; -5235
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 3 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender4
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; -3810
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 4 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender5
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; -2385
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 5 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender6
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; -960
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 6 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender7
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 465
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 7 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender8
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 1890
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 8 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender9
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 3315
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 9 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender10
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 4740
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 10 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender11
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 6165
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 11 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender12
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 7590
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 12 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender13
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 9015
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 13 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender14
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 10440
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 14 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender15
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 11865
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 15 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender16
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 13290
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 16 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender17
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 14715
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 17 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender18
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 16140
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 18 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender19
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 17565
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 19 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender20
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 18990
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 20 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender21
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 20415
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 21 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender22
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 21840
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 22 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender23
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 23265
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 23 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender24
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 24690
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 24 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender25
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 26115
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 25 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender26
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 27540
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 26 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender27
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 28965
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 27 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender28
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 30390
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 28 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender29
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 31815
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 29 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender30
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 33240
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 30 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender31
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 34665
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 31 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender32
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 36090
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 32 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender33
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 37515
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 33 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender34
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 38940
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 34 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender35
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 40365
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 35 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender36
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 41790
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 36 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender37
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 43215
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 37 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender38
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 44640
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 38 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender39
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 46065
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 39 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender40
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 47490
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 40 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender41
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 48915
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 41 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender42
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 50340
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 42 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender43
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 51765
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 43 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender44
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 53190
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 44 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender45
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 54615
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 45 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender46
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 56040
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 46 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender47
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 57465
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 47 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender48
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 58890
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 48 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender49
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 60315
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 49 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender50
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 61740
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 50 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender51
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 63165
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 51 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender52
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 64590
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 52 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender53
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 66015
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 53 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender54
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 67440
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 54 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender55
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 68865
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 55 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender56
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 70290
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 56 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender57
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 71715
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 57 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender58
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 73140
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 58 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender59
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 74565
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 59 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender60
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 75990
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 60 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender61
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 77415
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 61 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender62
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 78840
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 62 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender63
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 80265
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 63 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender64
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 81690
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 64 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender65
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 83115
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 65 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender66
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 84540
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 66 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender67
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 85965
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 67 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender68
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 87390
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 68 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender69
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 88815
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 69 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender70
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 90240
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 70 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender71
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 91665
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 71 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender72
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 93090
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 72 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender73
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 94515
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 73 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender74
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 95940
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 74 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender75
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 97365
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 75 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender76
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 98790
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 76 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender77
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 100215
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 77 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender78
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 101640
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 78 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender79
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 103065
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 79 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender80
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 104490
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 80 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender81
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 105915
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 81 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender82
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 107340
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 82 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender83
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 108765
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 83 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender84
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 110190
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 84 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender85
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 111615
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 85 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender86
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 113040
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 86 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender87
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 114465
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 87 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender88
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 115890
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 88 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender89
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 117315
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 89 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender90
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 118740
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 90 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender91
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 120165
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 91 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender92
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 121590
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 92 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender93
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 123015
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 93 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender94
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 124440
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 94 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender95
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 125865
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 95 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender96
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 127290
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 96 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender97
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 128715
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 97 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender98
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 130140
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 98 ; int
+                }
+            }
+		Atomic
+            {
+            Name = Sender99
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 131565
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 99 ; int
+                }
+            }
+		        }
+    }
