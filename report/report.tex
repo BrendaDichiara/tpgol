@@ -1,0 +1,111 @@
+\documentclass[]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{graphicx}
+\usepackage{tabularborder}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{placeins}
+\usepackage{caption}
+\usetikzlibrary{shapes}
+\usetikzlibrary{fit}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[C]{\thepage}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{pgfplots}
+\usepackage{float}
+%\usepackage[margin=1in]{geometry}
+\usepackage[spanish]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{graphicx}
+\newcommand{\dint}{\delta_{\text{int}}}
+\newcommand{\dext}{\delta_{\text{ext}}}
+\newcommand{\estado}{(id, s, vv, vc, pa, \sigma)}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\pgfplotsset{compat=1.16}
+\title{\textbf{Implementación del Juego de la vida de Conway en PowerDEVS}}
+\author{Lucio Mansilla}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+
+\section{Introducción / Problema}
+El Juego de la Vida de Conway, comúnmente conocido como "Juego de la Vida", es un autómata celular que fue propuesto por el matemático británico John Horton Conway en 1970. Los autómatas celulares son modelos matemáticos para sistemas dinámicos que evolucionan en pasos de tiempo discretos(generaciones). A pesar de su simplicidad aparente, tienen la capacidad de simular sistemas complejos y mostrar comportamientos emergentes, siendo utilizados en diversos contextos, desde la física hasta la teoría de computación.
+
+En el Juego de la Vida, cada celda en una cuadrícula bidimensional puede estar en uno de dos estados: "viva" o "muerta". Las celdas interactúan con sus ocho vecinos adyacentes en horizontal, vertical y diagonal, transicionando entre los estados de vida y muerte de acuerdo a las siguientes reglas de evolución:
+
+\begin{itemize}
+\item Cualquier celda viva con dos o tres vecinos vivos sobrevive para la siguiente generación.
+\item Cualquier celda viva con menos de dos vecinos vivos muere por soledad para la siguiente generación.
+\item Cualquier celda viva con más de tres vecinos vivos muere por superpoblación para la siguiente generación.
+\item Cualquier celda muerta con exactamente tres vecinos vivos nace para la siguiente generación.
+\end{itemize}
+
+Aunque estas son las reglas originales, existen muchas variantes del Juego de la Vida con diferentes reglas. Además, es posible observar la aparición de diversos patrones, algunos  estáticos, otros oscilan entre varios estados y otros se desplazan por el tablero. Estos patrones serán el objeto de estudio en las secciones posteriores de este informe.
+
+El propósito de este proyecto es explorar la dinámica del juego de una manera visual e interactiva, para ello se implementará el mismo en PowerDEVS, una herramienta de simulación de eventos discretos basada en la teoría DEVS (Discrete Event System Specification).
+
+\section{Especificación DEVS de una celda}
+Puesto que el Juego de la Vida es un autómata celular, es natural modelarlo como un sistema DEVS. En particular, cada celda en la cuadrícula se modela como un DEVS atómico, que se comunica con sus vecinos a través de sus puertos de entrada y salida.\\
+
+El DEVS que representa a una célula está definido como
+
+\[ C = \langle X, Y, S, \dint, \dext, \lambda, ta \rangle \]
+
+donde
+
+\begin{itemize}
+\item $X = \{R\}$ es el conjunto de entradas.
+
+
+\end{itemize}
+
+
+
+
+% Aquí puedes detallar cómo especificaste una celda del juego en DEV
+\section{Implementación en PowerDEVS}
+% En esta sección puedes describir los patrones que has implementado.
+\section{Patrones}
+El Juego de la Vida es conocido por la variedad de patrones que pueden surgir de sus reglas simples. Los patrones son configuraciones de células que se repiten después de un número fijo de generaciones, y pueden clasificarse en varias categorías según su comportamiento.
+
+\subsection{Patrones estáticos}
+Los patrones estáticos, también conocidos como "still lifes", son configuraciones de células que no cambian de una generación a la siguiente. Un ejemplo clásico de un patrón estático es el "bloque", una cuadrícula de 2x2 células vivas.
+
+% Aquí puedes insertar una figura de un bloque u otro patrón estático.
+
+\subsection{Osciladores}
+Los osciladores son patrones que se repiten después de un número fijo de generaciones, llamado su período. Un ejemplo famoso es el "blinker", una línea recta de tres células vivas que oscila entre una orientación horizontal y vertical.
+
+% Aquí puedes insertar una figura de un blinker u otro oscilador.
+
+\subsection{Naves espaciales}
+Las naves espaciales son patrones que se trasladan a través de la cuadrícula mientras oscilan. El ejemplo más conocido es la "nave ligera" (o "glider" en inglés), que se desplaza diagonalmente a través de la cuadrícula mientras oscila entre cuatro configuraciones diferentes.
+
+% Aquí puedes insertar una figura de una nave ligera u otra nave espacial.
+
+\subsection{Patrones complejos}
+Además de estos patrones simples, también existen patrones más complejos en el Juego de la Vida. Algunos de estos pueden "disparar" naves espaciales, otros pueden "construir" patrones adicionales, y otros pueden incluso comportarse como máquinas de Turing universales, lo que significa que pueden computar cualquier función computable.
+
+% Aquí puedes insertar figuras de patrones complejos y discutir sus propiedades.
+
+Estos patrones ilustran la increíble diversidad de comportamientos que pueden surgir del Juego de la Vida. En las siguientes secciones, veremos cómo estos patrones pueden ser generados e investigados usando PowerDEVS.
+
+
+
+\section{Conclusiones}
+\end{document}
