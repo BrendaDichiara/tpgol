@@ -1,14 +1,7 @@
 #include "mediator.h"
 void mediator::init(double t,...) {
-//The 'parameters' variable contains the parameters transferred from the editor.
 va_list parameters;
 va_start(parameters,t);
-
-//To get a parameter: %Name% = va_arg(parameters,%Type%)
-//where:
-//      %Name% is the parameter name
-//	%Type% is the parameter type
-
 char* file_name_raw = va_arg(parameters, char*);
 
 std::ifstream file;
@@ -25,13 +18,11 @@ int rows, cols;
 file >> rows;
 file >> cols;
 
-// Inicialización de la estructura GameState
+//Initialization of GameState structure
 game = (GameState*) malloc(sizeof(GameState));
 game->storage = (int *) malloc(sizeof(int) * (rows*cols + 1));
-game->rows = rows;  // Supongo que las filas son igual al size
-game->cols = cols;  // Supongo que las columnas son igual al size
-
-
+game->rows = rows;  
+game->cols = cols;  
 
 for (int i = 0; i < rows * cols; i++) {
     char cell;
@@ -47,12 +38,10 @@ for (int i = 0; i < rows * cols; i++) {
 }
 file.close();
 
-
 inf = 1e10;
 sigma = 1; 
 }
 double mediator::ta(double t) {
-//This function returns a double.
 return sigma;
 }
 void mediator::dint(double t) {
@@ -65,7 +54,7 @@ void mediator::dext(Event x, double t) {
 //     'x.port' is the port number
 //     'e' is the time elapsed since last transition
 int* cell_state = (int*)x.value;
-game->storage[cell_state[0]] = cell_state[1];
+game->storage[cell_state[CID]] = cell_state[LIFE_STATE];
 sigma = 1;
 }
 Event mediator::lambda(double t) {
@@ -86,7 +75,6 @@ for(int i=0; i<game->rows; i++) {
     }
     printLog("\n");
 }
-
 
 return Event(game, 0);
 }

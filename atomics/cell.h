@@ -16,8 +16,6 @@ class cell: public Simulator {
 double sigma;
 float inf;
 int state[2];
-
-int CID;
 GameState* game;
 
 public:

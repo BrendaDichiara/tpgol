@@ -1,3 +1,4 @@
+//CPP:gol/utilit.cpp
 //CPP:gol/mediator.cpp
 #if !defined mediator_h
 #define mediator_h
@@ -9,7 +10,7 @@
 #include "fstream"
 #include "string"
 #include "iostream"
-#include "gol/utilities.h"
+#include "gol/utilit.h"
 
 
 class mediator: public Simulator { 
