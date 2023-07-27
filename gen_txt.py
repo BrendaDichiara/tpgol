@@ -1,6 +1,7 @@
 import tkinter as tk
 from tkinter import ttk, filedialog, Toplevel
 import webbrowser
+import subprocess
 
 class Grid:
     def __init__(self, master, rows, cols):
@@ -106,7 +107,7 @@ class Application:
     # Functions for the buttons in tab 3
     def set_powerdevs(self):
         print("Setting PowerDEVS...")
-        # Add your code here
+        subprocess.run(["bash", "./setup.sh"])
 
     def reset_original(self):
         print("Resetting to original version...")
