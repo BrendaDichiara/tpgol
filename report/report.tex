@@ -30,7 +30,7 @@
 \usepackage{graphicx}
 \newcommand{\dint}{\delta_{\text{int}}}
 \newcommand{\dext}{\delta_{\text{ext}}}
-\newcommand{\estado}{(id, s, vv, vc, pa, \sigma)}
+\newcommand{\estado}{(cid,ls,\sigma)}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
 \pgfplotsset{compat=1.16}
@@ -60,20 +60,42 @@ Aunque estas son las reglas originales, existen muchas variantes del Juego de la
 El propósito de este proyecto es explorar la dinámica del juego de una manera visual e interactiva, para ello se implementará el mismo en PowerDEVS, una herramienta de simulación de eventos discretos basada en la teoría DEVS (Discrete Event System Specification).
 
 \section{Especificación DEVS de una celda}
-Puesto que el Juego de la Vida es un autómata celular, es natural modelarlo como un sistema DEVS. En particular, cada celda en la cuadrícula se modela como un DEVS atómico, que se comunica con sus vecinos a través de sus puertos de entrada y salida.\\
 
-El DEVS que representa a una célula está definido como
+El DEVS que representa únicamente a una célula se define como sigue:
 
 \[ C = \langle X, Y, S, \dint, \dext, \lambda, ta \rangle \]
 
 donde
 
 \begin{itemize}
-\item $X = \{R\}$ es el conjunto de entradas.
+  \item $X = GameState $
+
+  \item $Y = \big[\N \times \{0,1\} \big]$
+
+  % S = (id, estado, vecinosVivos, vecindarioCambio, proximaAccion, sigma)
+  \item $S = \N \times \{0, 1\} \times   \R_0^+$
+
+    El estado es una tupla $(cid, ls, \sigma)$ donde
+
+    \begin{itemize}
+      \item $cid \in \N$ es el identificador de la célula.
+      \item $ls \in \{0, 1\}$ es el estado de la célula (1 = viva, 0 = muerta)
+      \item $\sigma \in \R_0^+$ es el tiempo restante para realizar una próxima salida.
+    \end{itemize}
+
+  \item $\dint(\estado) = (cid,ls,\infty)$
 
 
+  \item $\dext(\estado, e, (x, p)) = \begin{cases}
+    (cid,0,1) & ls == 1 \land (alives < 2 \lor alives > 3)  \\
+    (cid,1,1) & ls == 0 \land alives == 3 \\
+    (cid,ls,1) & \text{otherwise }
+  \end{cases}$
+
+    donde $alives = \text{countAlives}(x.rows,x.cols,cid,x.board)$
+  \item $\lambda(\estado) = (cid,ls) $
+  \item $ta(\estado) = \sigma$
 \end{itemize}
-
 
 
 
@@ -95,6 +117,9 @@ Los osciladores son patrones que se repiten después de un número fijo de gener
 
 \subsection{Naves espaciales}
 Las naves espaciales son patrones que se trasladan a través de la cuadrícula mientras oscilan. El ejemplo más conocido es la "nave ligera" (o "glider" en inglés), que se desplaza diagonalmente a través de la cuadrícula mientras oscila entre cuatro configuraciones diferentes.
+
+\subsection{Methuselahs}
+Los Methuselahs son patrones que evolucionan durante un número grande de generaciones antes de estabilizarse en un patrón estático, un oscilador o una nave espacial. El ejemplo más conocido es el "acorn", que evoluciona durante 5206 generaciones antes de estabilizarse en 633 células vivas, incluyendo 11 osciladores, 2 naves espaciales y 1 patrón estático.
 
 % Aquí puedes insertar una figura de una nave ligera u otra nave espacial.
 
