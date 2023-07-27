@@ -1,4 +1,4 @@
-//CPP:random/mediator.cpp
+//CPP:gol/mediator.cpp
 #if !defined mediator_h
 #define mediator_h
 
@@ -9,6 +9,7 @@
 #include "fstream"
 #include "string"
 #include "iostream"
+#include "gol/utilities.h"
 
 
 class mediator: public Simulator { 
@@ -18,12 +19,6 @@ class mediator: public Simulator {
 int* storage;
 double sigma;
 float inf;
-typedef struct {
-    int* storage;
-    int rows;
-    int cols;
-} GameState;
-
 GameState* game;
 
 public:

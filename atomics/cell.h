@@ -1,4 +1,4 @@
-//CPP:random/cell.cpp
+//CPP:gol/cell.cpp
 #if !defined cell_h
 #define cell_h
 
@@ -6,6 +6,7 @@
 #include "event.h"
 #include "stdarg.h"
 
+#include "gol/mediator.h"
 
 
 class cell: public Simulator { 
@@ -17,12 +18,6 @@ float inf;
 int state[2];
 
 int CID;
-typedef struct {
-    int* storage;
-    int rows;
-    int cols;
-} GameState;
-
 GameState* game;
 
 public:

@@ -1,7 +1,7 @@
 Coupled
     {
     Type = Root
-    Name = prueba32
+    Name = example_3x3
     Ports = 0; 0
     Description = 
     Graphic
@@ -26,7 +26,7 @@ Coupled
             Description = Coupled DEVS model
             Graphic
                 {
-                Position = -14055; -60
+                Position = -10680; 315
                 Dimension = 675; 720
                 Direction = Right
                 Color = 15
@@ -54,7 +54,7 @@ Coupled
                         }
                     Parameters
                         {
-                        filename = Str; initial ; 3
+                        filename = Str; initial ; str
                         }
                     }
                 Atomic
@@ -73,7 +73,7 @@ Coupled
                         }
                     Parameters
                         {
-                        CID = Str; 0 ; 0
+                        CID = Str; 1 ; 0
                         }
                     }
                 Atomic

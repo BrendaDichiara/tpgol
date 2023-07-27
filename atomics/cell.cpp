@@ -12,8 +12,6 @@ CID = getScilabVar(fvar);
 state[0] = CID;
 
 inf = 1e10;
-//vida=5;
-
 sigma=inf;
 }
 double cell::ta(double t) {
@@ -58,13 +56,11 @@ state[1] = game->storage[CID];
 if (state[1] == 1) {
     if (count_alives < 2 || count_alives > 3)
         state[1] = 0;  // Cell dies
-
 }
 // Cell is currently dead
 else {
     if (count_alives == 3)
-        state[1] = 1;  // Cell becomes alive
-  
+        state[1] = 1;  // Cell becomes alive 
 }
 sigma = 1;
 
