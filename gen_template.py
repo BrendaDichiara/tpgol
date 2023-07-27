@@ -14,7 +14,7 @@ Coupled
         Direction = Right
         Color = 15
         Icon = 
-        Window = 5000; 5000; 5000; 5000
+        Window = 4000; 4000; 4000; 4000
         }}
     Parameters
         {{
@@ -33,8 +33,8 @@ Coupled
             Description = Atomic DEVS model
             Graphic
                 {{
-                Position = -15780 ; -8850
-                Dimension = 675 ; 1350
+                Position = -31125 ; -14970
+                Dimension = 300 ; 6405
                 Direction = Right
                 Color = 4
                 Icon = None
@@ -55,8 +55,8 @@ Coupled
             Description = Atomic DEVS model
             Graphic
                 {{
-                Position = -17880 ; {position}
-                Dimension = 675 ; 720
+                Position = -32400 ; {position}
+                Dimension = 300 ; 300
                 Direction = Right
                 Color = 15
                 Icon = None
@@ -75,7 +75,7 @@ Coupled
     new_content += MEDIATOR_TEMPLATE.format(num_ports=N*M).strip() + "\n\t\t"
     # Add each SENDER
     for i in range(N*M):
-            new_content += SENDER_TEMPLATE.format(sender_id=i, position=-9510 + 1425*i).strip() + "\n\t\t"
+            new_content += SENDER_TEMPLATE.format(sender_id=i, position=-14700 + 700*i).strip() + "\n\t\t"
         
     # Close the 'System' section and the rest of the file
     new_content += "        }\n    }\n"
@@ -83,14 +83,4 @@ Coupled
     # Write the new .pdm file
     with open(output_file, "w") as file:
         file.write(new_content)
-
-# Set the size of the board
-N = 10
-M = 10
-
-# Output file path
-output_file = "prueba_{0}x{1}.pdm".format(N, M)
-
-# Generate the .pdm file
-generate_pdm_v6(N, M, output_file)
 

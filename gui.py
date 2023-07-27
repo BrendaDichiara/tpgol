@@ -59,6 +59,7 @@ class Application:
         
         self.label_rows_2 = tk.Label(self.tab2, text="Filas (N):")
         self.label_cols_2 = tk.Label(self.tab2, text="Columnas (N):")
+        self.label_status = tk.Label(self.tab2, text="")  
         self.pdm_rows = tk.Entry(self.tab2)
         self.pdm_cols = tk.Entry(self.tab2)
         self.button_generate_pdm = tk.Button(self.tab2, text='Generar PDM', command=lambda: self.generate_pdm(int(self.pdm_rows.get()), int(self.pdm_cols.get())))
@@ -75,6 +76,8 @@ class Application:
         self.pdm_rows.grid(row=1, column=0, padx=5, pady=5)
         self.pdm_cols.grid(row=1, column=1, padx=5, pady=5)
         self.button_generate_pdm.grid(row=1, column=2, padx=5, pady=5)
+        self.label_status.grid(row=1, column=3, padx=5, pady=5)  
+
 
         # Add buttons to tab 3
         self.button_set_powerdevs = tk.Button(self.tab3, text='Setear PowerDEVS', command=self.set_powerdevs)
@@ -101,17 +104,18 @@ class Application:
 
     def generate_pdm(self, N, M):
         from gen_template import generate_pdm_v6
-        output_file = "generated_{0}x{1}.pdm".format(N, M)
+        output_file = "../examples/gol/generated_{0}x{1}.pdm".format(N, M)
         generate_pdm_v6(N, M, output_file)    
+        self.label_status.config(text="Listo!", fg="green")
 
     # Functions for the buttons in tab 3
     def set_powerdevs(self):
         print("Setting PowerDEVS...")
-        subprocess.run(["bash", "./setup.sh"])
+        subprocess.run(["bash", "./build.sh"])
 
     def reset_original(self):
         print("Resetting to original version...")
-        # Add your code here
+        subprocess.run(["bash", "./restore.sh"])
 
     # Function for the Help button
     def open_help_window(self):
@@ -143,5 +147,7 @@ class Application:
             self.open_help_window()
 
 root = tk.Tk()
+root.title("PowerDEVS - Game of Life Configuration") 
 app = Application(root)
 root.mainloop()
+
