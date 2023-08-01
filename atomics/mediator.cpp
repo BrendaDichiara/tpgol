@@ -6,7 +6,6 @@ char* file_name_raw = va_arg(parameters, char*);
 
 std::ifstream file;
 std::string file_name = "../patterns/" + std::string(file_name_raw) + ".txt";
-//printLog("nombre %s", file_name.c_str());
 
 file.open(file_name.data());
 if (!file.is_open()) {
@@ -36,10 +35,29 @@ for (int i = 0; i < rows * cols; i++) {
         return;  // or exit(-1), or throw an exception, etc.
     }
 }
+
+// Read survivor and birth rules
+std::string survivor_rules, birth_rules;
+file >> survivor_rules;
+file >> birth_rules;
+
+// Convert rules from string to array
+for (char c : survivor_rules) {
+    if (isdigit(c)) {
+        game->survivor_rules[c - '0'] = true;
+    }
+}
+for (char c : birth_rules) {
+    if (isdigit(c)) {
+        game->birth_rules[c - '0'] = true;
+    }
+}
+
 file.close();
 
 inf = 1e10;
 sigma = 1; 
+
 }
 double mediator::ta(double t) {
 return sigma;

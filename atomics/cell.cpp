@@ -32,16 +32,19 @@ state[LIFE_STATE] = game->storage[cid];
 
 // Cell is currently alive
 if (state[LIFE_STATE] == ALIVE) {
-    if (alives < 2 || alives > 3)
+    // Check if 'alives' is in the 'survivor_rules' array
+    if (!game->survivor_rules[alives])
         state[LIFE_STATE] = DEAD;  // Cell dies
 }
 // Cell is currently dead
 else {
-    if (alives == 3)
+    // Check if 'alives' is in the 'birth_rules' array
+    if (game->birth_rules[alives])
         state[LIFE_STATE] = ALIVE;  // Cell becomes alive 
 }
 
 sigma = 1;
+
 
 }
 Event cell::lambda(double t) {
