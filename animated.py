@@ -3,7 +3,7 @@ import matplotlib.animation as animation
 import numpy as np
 
 # Leemos el archivo .log
-name = 'octagon_2'
+name = 'LWSS'
 size= 8
 with open(f'logs/{name}.log', 'r') as file:
     lines = file.readlines()
@@ -30,7 +30,7 @@ def animate(i):
     ax.imshow(boards[i], cmap='binary', vmin=0, vmax=1)
     ax.set_title(f"Gen {i}")  # Ajusta el título para mostrar el paso de tiempo actual
     
-    if i < 6 :
+    if i < 24:
         filename = f"{name}_{i}.png"    
         plt.savefig(filename, bbox_inches='tight')
 
