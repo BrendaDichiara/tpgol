@@ -3,7 +3,7 @@ import matplotlib.animation as animation
 import numpy as np
 
 # Leemos el archivo .log
-name = 'mazing'
+name = 'octagon_2'
 size= 8
 with open(f'logs/{name}.log', 'r') as file:
     lines = file.readlines()
@@ -28,9 +28,9 @@ fig, ax = plt.subplots()
 
 def animate(i):
     ax.imshow(boards[i], cmap='binary', vmin=0, vmax=1)
-    ax.set_title(f"Time {i}")  # Ajusta el título para mostrar el paso de tiempo actual
+    ax.set_title(f"Gen {i}")  # Ajusta el título para mostrar el paso de tiempo actual
     
-    if i < 4 :
+    if i < 6 :
         filename = f"{name}_{i}.png"    
         plt.savefig(filename, bbox_inches='tight')
 
@@ -44,8 +44,7 @@ def animate(i):
 
     plt.xticks([])
     plt.yticks([])
-
-  
+ 
 ani = animation.FuncAnimation(fig, animate, frames=len(boards), interval=1500, repeat=False)
 #ani.save(f'{name}.gif', writer='ffmpeg', fps=1)
 plt.show()
