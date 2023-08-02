@@ -1,9 +1,10 @@
 # Fdb version 4
-["pdflatex"] 1690998218 "/home/luciom/powerdevs-docker/power-devs/report/report.tex" "report.pdf" "report" 1690998219 0
+["pdflatex"] 1691005328 "/home/luciom/powerdevs-docker/power-devs/report/report.tex" "report.pdf" "report" 1691005329 0
   "../assets/oscillator/blinker/blinker.png" 1690959367 38421 1640ef1618d62cbc7e1975493e28d3d4 ""
   "../assets/oscillator/mazing/mazing.jpg" 1690961763 130093 53151a5e7eac177869656208880a9181 ""
   "../assets/oscillator/octagon_2/octagon_2.png" 1690960175 128602 cbe9e50436a04b8a5e8fd3805f5106c3 ""
   "../assets/oscillator/toad/toad.png" 1690959367 38779 61b3b5d5526014ef18a58b149f6a4891 ""
+  "../assets/space_ships/LWSS/LWSS.jpg" 1691005291 113453 4acd3cf902a882bf9b9dfe1df14ebeec ""
   "../assets/space_ships/glider/glider_12.jpg" 1690996871 249650 8e26e79d106d4586a54d310276521d8e ""
   "../assets/space_ships/glider/glider_12_24.jpg" 1690997442 256332 64551e3343b6980dea13c21e1e3f07ed ""
   "../assets/still_life/block/block.png" 1690955301 25835 502318c12ae40cae83e24613e15c686b ""
@@ -11,7 +12,7 @@
   "../assets/still_life/integral/integral.png" 1690955102 25266 de69b3e7723e45ff4d0df11c6ed882e4 ""
   "../assets/still_life/ship/ship.png" 1690955102 25752 5cef52eda6017c5ce89badf45f74046d ""
   "/home/luciom/.texlive2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1684638453 7862929 0273a3f92cce2b0d8ae779571cdbbd2b ""
-  "/home/luciom/powerdevs-docker/power-devs/report/report.tex" 1690997473 11040 1a2a21afb1f52c0bf530bc5ce38c3c47 ""
+  "/home/luciom/powerdevs-docker/power-devs/report/report.tex" 1691005327 11262 d620554d9dcba14793c5159bde32b4aa ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -221,8 +222,8 @@
   "/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty" 1655066402 56148 51a9a8571c07b9921892ae11063ae853 ""
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1684972800 40326 aba987258e6d6b6da5dec3a727ea174b ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1686670456 4602579 3b3262ec8ed5367541293e1bf1830c9d ""
-  "report.aux" 1690998218 3504 b3d134ec1fe255f42cb9a9e7b99f1f37 "pdflatex"
-  "report.tex" 1690997473 11040 1a2a21afb1f52c0bf530bc5ce38c3c47 ""
+  "report.aux" 1691005329 3671 6b3a5978830fadf49542a466c6996a9d "pdflatex"
+  "report.tex" 1691005327 11262 d620554d9dcba14793c5159bde32b4aa ""
   (generated)
   "report.aux"
   "report.log"
