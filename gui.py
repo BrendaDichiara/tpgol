@@ -103,9 +103,9 @@ class Application:
             self.grid.export()
 
     def generate_pdm(self, N, M):
-        from gen_template import generate_pdm_v6
+        from gen_template import generate_pdm
         output_file = "../examples/gol/generated_{0}x{1}.pdm".format(N, M)
-        generate_pdm_v6(N, M, output_file)    
+        generate_pdm(N, M, output_file)    
         self.label_status.config(text="Listo!", fg="green")
 
     # Functions for the buttons in tab 3

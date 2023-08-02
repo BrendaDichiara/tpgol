@@ -1,4 +1,4 @@
-def generate_pdm_v6(N, M, output_file):
+def generate_pdm(N, M, output_file):
     # Base content of the .pdm file
     BASE_CONTENT = """
 Coupled

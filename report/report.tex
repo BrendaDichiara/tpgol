@@ -70,7 +70,7 @@ donde
 \begin{itemize}
   \item $X = GameState $
 
-  \item $Y = \big[\N \times \{0,1\} \big]$
+  \item $Y = \N \times \{0,1\}$
 
   % S = (id, estado, vecinosVivos, vecindarioCambio, proximaAccion, sigma)
   \item $S = \N \times \{0, 1\} \times   \R_0^+$
@@ -87,8 +87,8 @@ donde
 
 
   \item $\dext(\estado, e, (x, p)) = \begin{cases}
-    (cid,0,1) & ls == 1 \land (alives < 2 \lor alives > 3)  \\
-    (cid,1,1) & ls == 0 \land alives == 3 \\
+    (cid,0,1) & ls == 1 \land \not \in SR  \\
+    (cid,1,1) & ls == 0 \land \in BR \\
     (cid,ls,1) & \text{otherwise }
   \end{cases}$
 
