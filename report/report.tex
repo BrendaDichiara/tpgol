@@ -95,7 +95,19 @@ donde
     donde $alives = \text{countAlives}(x.rows,x.cols,cid,x.board)$
   \item $\lambda(\estado) = (cid,ls) $
   \item $ta(\estado) = \sigma$
+
 \end{itemize}
+    \begin{itemize}
+      \item \textbf{countAlives}: La función \textbf{countAlives} tiene como objetivo calcular el número de células vecinas que están vivas para una célula dada. Esta función recibe cuatro parámetros: el número de filas (rows) y columnas (cols) del tablero, el identificador de la célula (cell\_id) y el estado actual del tablero (board). La función opera de la siguiente manera:
+
+        \item Primero, determina la ubicación (fila y columna) de la célula dada en el tablero usando su identificador (cell\_id) y las dimensiones del tablero.
+        \item Posteriormente, recorre todas las células vecinas de la célula dada. Esto se realiza iterando a través de todas las posibles combinaciones de desplazamientos en filas y columnas en el rango de -1 a 1. 
+        \item Ignora la propia célula durante la iteración, es decir, el caso cuando tanto el desplazamiento de la fila como de la columna es cero.
+        \item Para cada célula vecina, primero verifica si está dentro de los límites del tablero. Si la célula vecina está fuera de los límites del tablero, pasa a la siguiente iteración.
+        \item Si la célula vecina está dentro de los límites, verifica si está viva, es decir, si su estado en el tablero es 1. Si es así, incrementa un contador de células vivas.
+        \item Finalmente, después de haber iterado a través de todas las células vecinas, la función devuelve el contador de células vivas.
+    \end{itemize}
+
 
 
 
@@ -146,6 +158,19 @@ Los osciladores son patrones que vuelven a su configuración inicial después de
   \label{fig:blinker}
   \end{figure}
 
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{../assets/oscillator/toad/toad.png}
+    \caption{Patrón toad: }
+    \label{fig:toad}
+    \end{figure}
+
+    \begin{figure}[H]
+      \centering
+      \includegraphics[width=0.9\textwidth]{../assets/oscillator/octagon_2/octagon_2.png}
+      \caption{Patrón octagon: }
+      \label{fig:octagon}
+      \end{figure}
 % Aquí puedes insertar una figura de un blinker u otro oscilador.
 
 \subsection{Naves espaciales}
