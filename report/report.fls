@@ -704,11 +704,11 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecrm0500.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm
-INPUT ../assets/still_life/block/block_8_0.png
-INPUT ../assets/still_life/block/block_8_0.png
-INPUT ../assets/still_life/block/block_8_0.png
-INPUT ../assets/still_life/block/block_8_0.png
-INPUT ../assets/still_life/block/block_8_0.png
+INPUT ../assets/still_life/block/block.png
+INPUT ../assets/still_life/block/block.png
+INPUT ../assets/still_life/block/block.png
+INPUT ../assets/still_life/block/block.png
+INPUT ../assets/still_life/block/block.png
 INPUT report.aux
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc

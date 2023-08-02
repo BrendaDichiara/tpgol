@@ -1,8 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1690953976 "/home/luciom/powerdevs-docker/power-devs/report/report.tex" "report.pdf" "report" 1690953976 0
-  "../assets/still_life/block/block_8_0.png" 1690953656 4239 59211347f4594d6537ebc893d0d7c490 ""
+["pdflatex"] 1690954594 "/home/luciom/powerdevs-docker/power-devs/report/report.tex" "report.pdf" "report" 1690954595 0
+  "../assets/still_life/block/block.png" 1690954582 25613 5b32833b87498f5cd37cd2eb0098985d ""
   "/home/luciom/.texlive2022/texmf-var/web2c/pdftex/pdflatex.fmt" 1684638453 7862929 0273a3f92cce2b0d8ae779571cdbbd2b ""
-  "/home/luciom/powerdevs-docker/power-devs/report/report.tex" 1690953975 7061 6e6ec68b265f237bd9a44fbccd7f9f99 ""
+  "/home/luciom/powerdevs-docker/power-devs/report/report.tex" 1690954594 7044 be858e78eeaeff3175805a1bbd0cb39e ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -207,8 +207,8 @@
   "/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty" 1655066402 56148 51a9a8571c07b9921892ae11063ae853 ""
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1684972800 40326 aba987258e6d6b6da5dec3a727ea174b ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1686670456 4602579 3b3262ec8ed5367541293e1bf1830c9d ""
-  "report.aux" 1690953976 1647 350429942839cfc9d9f76ebc6dfac76b "pdflatex"
-  "report.tex" 1690953975 7061 6e6ec68b265f237bd9a44fbccd7f9f99 ""
+  "report.aux" 1690954594 1633 dddf2f21d418cb428855739726678dc6 "pdflatex"
+  "report.tex" 1690954594 7044 be858e78eeaeff3175805a1bbd0cb39e ""
   (generated)
   "report.aux"
   "report.log"
