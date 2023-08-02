@@ -148,61 +148,74 @@ Los patrones estáticos, también conocidos como "still lifes", son configuracio
   \label{fig:honeycomb}
   \end{figure}
 
-\subsection{Osciladores}
-Los osciladores son patrones que vuelven a su configuración inicial después de un número fijo de generaciones, llamado su período. A diferencia de los patrones estáticos, los osciladores cambian su apariencia durante su ciclo de vida, pero eventualmente vuelven a su estado original. Un ejemplo famoso de oscilador es el "blinker", que oscila entre una orientación horizontal y vertical cada generación.
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.9\textwidth]{../assets/oscillator/blinker/blinker.png}
-  \caption{Patrón blinker: un oscilador de periodo 2. Oscila entre una orientación horizontal y vertical cada generación. Notar que en este caso hay 4 blinkers en el tablero.}
-  \label{fig:blinker}
-  \end{figure}
-
+  \subsection{Osciladores}
+  Los osciladores son patrones que vuelven a su configuración inicial después de un número fijo de generaciones, conocido como su período. A diferencia de los patrones estáticos, los osciladores cambian su apariencia durante su ciclo de vida, pero eventualmente vuelven a su estado original. 
+  
   \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\textwidth]{../assets/oscillator/toad/toad.png}
-    \caption{Patrón toad: }
-    \label{fig:toad}
+    \includegraphics[width=0.9\textwidth]{../assets/oscillator/blinker/blinker.png}
+    \caption{Patrón blinker: un oscilador de periodo 2. Oscila entre una orientación horizontal y vertical cada generación. Notar que en este caso hay 4 blinkers en el tablero.}
+    \label{fig:blinker}
     \end{figure}
-
-    \begin{figure}[H]
+  
+  \begin{figure}[H]
       \centering
-      \includegraphics[width=0.7\textwidth]{../assets/oscillator/octagon_2/octagon_2.png}
-      \caption{Patrón octagon: }
-      \label{fig:octagon}
-      \end{figure}
-
-      \begin{figure}[H]
+      \includegraphics[width=0.9\textwidth]{../assets/oscillator/toad/toad.png}
+      \caption{Patrón toad: un oscilador de periodo 2 que oscila entre dos configuraciones.}
+      \label{fig:toad}
+  \end{figure}
+  
+  \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.7\textwidth]{../assets/oscillator/octagon_2/octagon_2.png}
+        \caption{Patrón octagon: un oscilador de periodo 5 que se desplaza en un ciclo de rotación.}
+        \label{fig:octagon}
+  \end{figure}
+  
+  \begin{figure}[H]
         \centering
         \includegraphics[width=0.7\textwidth]{../assets/oscillator/mazing/mazing.jpg}
-        \caption{Patrón octagon: }
+        \caption{Patrón mazing: un oscilador de periodo 4 que oscila entre una forma cuadrada y una forma de cruz.}
         \label{fig:mazing}
-        \end{figure}
-% Aquí puedes insertar una figura de un blinker u otro oscilador.
-
-\subsection{Naves espaciales}
-Las naves espaciales son patrones que se trasladan a través de la cuadrícula mientras oscilan. El ejemplo más conocido es la "nave ligera" (o "glider" en inglés), que se desplaza diagonalmente a través de la cuadrícula mientras oscila entre cuatro configuraciones diferentes.
+  \end{figure}
+  
+  \subsection{Naves espaciales}
+  Las naves espaciales son patrones que se trasladan a través de la cuadrícula mientras oscilan. El ejemplo más conocido es la "nave ligera" (o "glider" en inglés), que se desplaza diagonalmente a través de la cuadrícula mientras oscila entre cuatro configuraciones diferentes.
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.87\textwidth]{../assets/space_ships/glider/glider_12.jpg}
+  
+    \label{fig:glider}
+  \end{figure}
+  \vspace*{-10mm} % Reduce el espacio vertical aquí. Ajusta el valor según sea necesario.
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.87\textwidth]{../assets/space_ships/glider/glider_12_24.jpg}
+    \caption{Patrón glider, generaciones 12-24: continúa su desplazamiento diagonal.}
+    \label{fig:glider_12_24}
+  \end{figure}
+  
+  \begin{figure}[H]
+      \centering
+      \includegraphics[width=1\textwidth]{../assets/space_ships/LWSS/LWSS.jpg}
+      \caption{Patrón LWSS (Nave Ligera de Espacio Medio): una nave espacial que se desplaza horizontalmente mientras oscila en una secuencia de cuatro configuraciones.}
+      \label{fig:LWS}
+  \end{figure}
+  
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=1\textwidth]{../assets/space_ships/MWSS/MWSS.png}
+    \caption{Patrón MWSS (Nave de Peso Medio del Espacio): se desplaza horizontalmente por el tablero, el tamaño intermedio entre las naves espaciales LWSS y HWSS.}
+    \label{fig:MWSS}
+\end{figure}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=1\textwidth]{../assets/space_ships/glider/glider_12.jpg}
-  \caption{Patrón glider: }
-  \label{fig:glider}
-  \end{figure}
-  \begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{../assets/space_ships/glider/glider_12_24.jpg}
-    \caption{Patrón glider continuación: }
-    \label{fig:glider_12_24}
-    \end{figure}
+  \includegraphics[width=1\textwidth]{../assets/space_ships/HWSS/HWSS.png}
+  \caption{Patrón HWSS (Nave Pesada del Espacio): es la más grande de las tres naves espaciales básicas, se desplaza horizontalmente por el tablero hacia la derecha infinitamente.}
+  \label{fig:HWS}
+\end{figure}
 
-      \begin{figure}[H]
-        \centering
-        \includegraphics[width=1\textwidth]{../assets/space_ships/LWSS/LWSS.jpg}
-        \caption{Patrón LWSS continuación: }
-        \label{fig:LWS}
-        \end{figure}
-    
 
 \subsection{Methuselahs}
 Los Methuselahs son patrones que evolucionan durante un número grande de generaciones antes de estabilizarse en un patrón estático, un oscilador o una nave espacial. El ejemplo más conocido es el "acorn", que evoluciona durante 5206 generaciones antes de estabilizarse en 633 células vivas, incluyendo 11 osciladores, 2 naves espaciales y 1 patrón estático.
