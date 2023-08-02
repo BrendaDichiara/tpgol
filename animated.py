@@ -3,7 +3,7 @@ import matplotlib.animation as animation
 import numpy as np
 
 # Leemos el archivo .log
-name = 'LWSS'
+name = 'HWSS'
 size= 8
 with open(f'logs/{name}.log', 'r') as file:
     lines = file.readlines()
