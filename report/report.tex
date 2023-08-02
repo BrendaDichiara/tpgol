@@ -103,44 +103,51 @@ donde
 \section{Implementación en PowerDEVS}
 % En esta sección puedes describir los patrones que has implementado.
 \section{Patrones}
-El Juego de la Vida es conocido por la variedad de patrones que pueden surgir de sus reglas simples. Los patrones son configuraciones de células que se repiten después de un número fijo de generaciones, y pueden clasificarse en varias categorías según su comportamiento. 
+El Juego de la Vida, concebido por el matemático británico John Horton Conway, es famoso por la vasta variedad de patrones que emergen de sus simples reglas. Los patrones se definen como configuraciones de células que se repiten tras un número determinado de generaciones, también conocido como su "periodo". Los patrones pueden ser estáticos, oscilantes o móviles, dependiendo de cómo cambian a lo largo del tiempo. 
 
 \subsection{Patrones estáticos}
-Los patrones estáticos, también conocidos como "still lifes", son configuraciones de células que no cambian de una generación a la siguiente. Un ejemplo clásico de un patrón estático es el "bloque", a continuación exploraremos algunos de estos:
+Los patrones estáticos, también conocidos como "still lifes", son configuraciones de células que no cambian de una generación a la siguiente, es decir, su periodo es 1. A continuación, se presentan ejemplos de estos patrones:
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.75\textwidth]{../assets/still_life/block/block.png}
-  \caption{Patrón bloque - Rules 23/3}
+  \caption{Patrón bloque: un patrón estático compuesto por un cuadrado de 2x2 células. Aparece frecuentemente debido a su simplicidad. Reglas 23/3.}
   \label{fig:block_23_3}
   \end{figure}
 
-  \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.75\textwidth]{../assets/still_life/integral/integral.png}
-    \caption{Patrón integral - Rules 23/3}
-    \label{fig:integral}
-    \end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{../assets/still_life/integral/integral.png}
+  \caption{Patrón integral: este patrón estático se asemeja a la forma de un signo integral. Reglas 23/3.}
+  \label{fig:integral}
+  \end{figure}
 
-    \begin{figure}[H]
-      \centering
-      \includegraphics[width=0.75\textwidth]{../assets/still_life/ship/ship.png}
-      \caption{Patrón ship - Rules 23/3}
-      \label{fig:ship}
-      \end{figure}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{../assets/still_life/ship/ship.png}
+  \caption{Patrón ship: este patrón estático se asemeja a la forma de una nave espacial. Reglas 23/3.}
+  \label{fig:ship}
+  \end{figure}
 
-      \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.75\textwidth]{../assets/still_life/honeycomb/honeycomb.png}
-        \caption{Patrón honeycomb - Rules 23/3}
-        \label{fig:honeycomb}
-        \end{figure}
-  
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{../assets/still_life/honeycomb/honeycomb.png}
+  \caption{Patrón honeycomb: este patrón estático se asemeja a la estructura de un panal de abejas. Reglas 23/3.}
+  \label{fig:honeycomb}
+  \end{figure}
 
 % Aquí puedes insertar una figura de un bloque u otro patrón estático.
 
 \subsection{Osciladores}
 Los osciladores son patrones que se repiten después de un número fijo de generaciones, llamado su período. Un ejemplo famoso es el "blinker", una línea recta de tres células vivas que oscila entre una orientación horizontal y vertical.
+
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{../assets/oscillator/blinker/blinker.png}
+  \caption{Patrón blinker: este patrón estático se asemeja a la estructura de un panal de abejas. Reglas 23/3.}
+  \label{fig:blinker}
+  \end{figure}
 
 % Aquí puedes insertar una figura de un blinker u otro oscilador.
 
