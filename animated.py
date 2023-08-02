@@ -3,7 +3,7 @@ import matplotlib.animation as animation
 import numpy as np
 
 # Leemos el archivo .log
-name = 'cuarto_pulsar'
+name = 'blinker'
 size= 8
 with open(f'logs/{name}.log', 'r') as file:
     lines = file.readlines()
@@ -30,9 +30,9 @@ def animate(i):
     ax.imshow(boards[i], cmap='binary', vmin=0, vmax=1)
     ax.set_title(f"Time {i}")  # Ajusta el título para mostrar el paso de tiempo actual
     
-    #filename = f"{name}_{i}.png" 
-    
-    #plt.savefig(filename, bbox_inches='tight')
+    if i < 5 :
+        filename = f"{name}_{i}.png"    
+        plt.savefig(filename, bbox_inches='tight')
 
     # Generar líneas verticales
     for i in range(size):
@@ -47,7 +47,6 @@ def animate(i):
 
   
 ani = animation.FuncAnimation(fig, animate, frames=len(boards), interval=1500, repeat=False)
-ani.save(f'{name}.gif', writer='ffmpeg', fps=1)
-
-plt.show()
+#ani.save(f'{name}.gif', writer='ffmpeg', fps=1)
+#plt.show()
 
