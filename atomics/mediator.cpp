@@ -42,12 +42,14 @@ file >> survivor_rules;
 file >> birth_rules;
 
 // Convert rules from string to array
-for (char c : survivor_rules) {
+for (size_t i = 0; i < survivor_rules.length(); i++) {
+    char c = survivor_rules[i];
     if (isdigit(c)) {
         game->survivor_rules[c - '0'] = true;
     }
 }
-for (char c : birth_rules) {
+for (size_t i = 0; i < birth_rules.length(); i++) {
+    char c = birth_rules[i];
     if (isdigit(c)) {
         game->birth_rules[c - '0'] = true;
     }

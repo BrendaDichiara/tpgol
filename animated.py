@@ -3,8 +3,8 @@ import matplotlib.animation as animation
 import numpy as np
 
 # Leemos el archivo .log
-name = 'MWSS'
-size= 8
+name = 'pulsar'
+size= 15
 with open(f'logs/{name}.log', 'r') as file:
     lines = file.readlines()
 
@@ -36,16 +36,16 @@ def animate(i):
 
     # Generar líneas verticales
     for i in range(size):
-        plt.axvline(x=i + 0.5, color='gray', lw=1)
+        plt.axvline(x=i + 0.5, color='white', lw=1)
 
     # Generar líneas horizontales
     for j in range(size):
-        plt.axhline(y=j + 0.5, color='gray', lw=1)
+        plt.axhline(y=j + 0.5, color='white', lw=1)
 
     plt.xticks([])
     plt.yticks([])
  
 ani = animation.FuncAnimation(fig, animate, frames=len(boards), interval=1500, repeat=False)
-#ani.save(f'{name}.gif', writer='ffmpeg', fps=1)
+ani.save(f'{name}.gif', writer='ffmpeg', fps=1)
 plt.show()
 
