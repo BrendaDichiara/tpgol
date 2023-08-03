@@ -1,0 +1,338 @@
+Coupled
+    {
+    Type = Root
+    Name = prueba_3x3
+    Ports = 0; 0
+    Description = 
+    Graphic
+        {
+        Position = 0; 0
+        Dimension = 600; 600
+        Direction = Right
+        Color = 15
+        Icon = 
+        Window = 5000; 5000; 5000; 5000
+        }
+    Parameters
+        {
+        }
+    System
+        {
+        Atomic
+            {
+            Name = Mediator0
+            Ports = 1 ; 1
+            Path = gol/mediator.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -14580 ; -4800
+                Dimension = 675 ; 1350
+                Direction = Right
+                Color = 4
+                Icon = None
+                }
+            Parameters
+                {
+                filename = Str; initial ; str
+                }
+            }
+        Atomic
+            {
+            Name = Sender0
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; -9510
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 0 ; int
+                }
+            }
+        Atomic
+            {
+            Name = Sender1
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; -8085
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 1 ; int
+                }
+            }
+        Atomic
+            {
+            Name = Sender2
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; -6660
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 2 ; int
+                }
+            }
+        Atomic
+            {
+            Name = Sender3
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; -5235
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 3 ; int
+                }
+            }
+        Atomic
+            {
+            Name = Sender4
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; -3810
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 4 ; int
+                }
+            }
+        Atomic
+            {
+            Name = Sender5
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; -2385
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 5 ; int
+                }
+            }
+        Atomic
+            {
+            Name = Sender6
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; -960
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 6 ; int
+                }
+            }
+        Atomic
+            {
+            Name = Sender7
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 465
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 7 ; int
+                }
+            }
+        Atomic
+            {
+            Name = Sender8
+            Ports = 1 ; 1
+            Path = gol/cell.h
+            Description = Atomic DEVS model
+            Graphic
+                {
+                Position = -17880 ; 1890
+                Dimension = 675 ; 720
+                Direction = Right
+                Color = 15
+                Icon = None
+                }
+            Parameters
+                {
+                CID = Str; 8 ; int
+                }
+            }
+        Line
+            {
+            Source = Cmp ;  2 ;  1 ; 0
+            Sink = Cmp ;  1 ;  1 ; -1
+            PointX = -17100 ; -14715 ; -14715
+            PointY = -9150 ; -9150 ; -4125
+            }
+        Line
+            {
+            Source = Cmp ;  3 ;  1 ; 0
+            Sink = Cmp ;  1 ;  1 ; -1
+            PointX = -17100 ; -14715 ; -14715
+            PointY = -7725 ; -7725 ; -4125
+            }
+        Line
+            {
+            Source = Cmp ;  4 ;  1 ; 0
+            Sink = Cmp ;  1 ;  1 ; -1
+            PointX = -17100 ; -14715 ; -14715
+            PointY = -6300 ; -6300 ; -4125
+            }
+        Line
+            {
+            Source = Cmp ;  5 ;  1 ; 0
+            Sink = Cmp ;  1 ;  1 ; -1
+            PointX = -17100 ; -14715 ; -14715
+            PointY = -4875 ; -4875 ; -4125
+            }
+        Line
+            {
+            Source = Cmp ;  6 ;  1 ; 0
+            Sink = Cmp ;  1 ;  1 ; -1
+            PointX = -17100 ; -14715 ; -14715
+            PointY = -3450 ; -3450 ; -4125
+            }
+        Line
+            {
+            Source = Cmp ;  7 ;  1 ; 0
+            Sink = Cmp ;  1 ;  1 ; -1
+            PointX = -17100 ; -14715 ; -14715
+            PointY = -2025 ; -2025 ; -4125
+            }
+        Line
+            {
+            Source = Cmp ;  8 ;  1 ; 0
+            Sink = Cmp ;  1 ;  1 ; -1
+            PointX = -17100 ; -14715 ; -14715
+            PointY = -600 ; -600 ; -4125
+            }
+        Line
+            {
+            Source = Cmp ;  9 ;  1 ; 0
+            Sink = Cmp ;  1 ;  1 ; -1
+            PointX = -17100 ; -14715 ; -14715
+            PointY = 825 ; 825 ; -4125
+            }
+        Line
+            {
+            Source = Cmp ;  10 ;  1 ; 0
+            Sink = Cmp ;  1 ;  1 ; -1
+            PointX = -17100 ; -14715 ; -14715
+            PointY = 2250 ; 2250 ; -4125
+            }
+        Line
+            {
+            Source = Cmp ;  1 ;  1 ; 0
+            Sink = Cmp ;  2 ;  1 ; -1
+            PointX = -13800 ; -13800 ; -18015 ; -18015
+            PointY = -4125 ; -9450 ; -9450 ; -9150
+            }
+        Line
+            {
+            Source = Cmp ;  1 ;  1 ; 0
+            Sink = Cmp ;  3 ;  1 ; -1
+            PointX = -13800 ; -18015 ; -18015
+            PointY = -4125 ; -4125 ; -7725
+            }
+        Line
+            {
+            Source = Cmp ;  1 ;  1 ; 0
+            Sink = Cmp ;  4 ;  1 ; -1
+            PointX = -13800 ; -18015 ; -18015
+            PointY = -4125 ; -4125 ; -6300
+            }
+        Line
+            {
+            Source = Cmp ;  1 ;  1 ; 0
+            Sink = Cmp ;  5 ;  1 ; -1
+            PointX = -13800 ; -18015 ; -18015
+            PointY = -4125 ; -4125 ; -4875
+            }
+        Line
+            {
+            Source = Cmp ;  1 ;  1 ; 0
+            Sink = Cmp ;  6 ;  1 ; -1
+            PointX = -13800 ; -18015 ; -18015
+            PointY = -4125 ; -4125 ; -3450
+            }
+        Line
+            {
+            Source = Cmp ;  1 ;  1 ; 0
+            Sink = Cmp ;  7 ;  1 ; -1
+            PointX = -13800 ; -18015 ; -18015
+            PointY = -4125 ; -4125 ; -2025
+            }
+        Line
+            {
+            Source = Cmp ;  1 ;  1 ; 0
+            Sink = Cmp ;  8 ;  1 ; -1
+            PointX = -13800 ; -18015 ; -18015
+            PointY = -4125 ; -4125 ; -600
+            }
+        Line
+            {
+            Source = Cmp ;  1 ;  1 ; 0
+            Sink = Cmp ;  9 ;  1 ; -1
+            PointX = -13800 ; -18015 ; -18015
+            PointY = -4125 ; -4125 ; 825
+            }
+        Line
+            {
+            Source = Cmp ;  1 ;  1 ; 0
+            Sink = Cmp ;  10 ;  1 ; -1
+            PointX = -13800 ; -18015 ; -18015
+            PointY = -4125 ; -4125 ; 2250
+            }
+        }
+    }
