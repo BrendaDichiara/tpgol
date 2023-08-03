@@ -1,5 +1,4 @@
 \documentclass[]{article}
-
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
 \usepackage{tabularborder}
@@ -8,6 +7,7 @@
 \usepackage{float}
 \usepackage{tikz}
 \usepackage{placeins}
+\usepackage{scrextend}
 \usepackage{caption}
 \usetikzlibrary{shapes}
 \usetikzlibrary{fit}
@@ -31,33 +31,40 @@
 \newcommand{\dint}{\delta_{\text{int}}}
 \newcommand{\dext}{\delta_{\text{ext}}}
 \newcommand{\estado}{(cid,ls,\sigma)}
+\newcommand{\mediatorstate}{(b,r,c,sr,br\sigma)}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\N}{\mathbb{N}}
 \pgfplotsset{compat=1.16}
-\title{\textbf{Implementación del Juego de la vida de Conway en PowerDEVS}}
-\author{Lucio Mansilla}
+\title{\textbf{Implementación del Juego de la vida de Conway's en PowerDEVS}}
+\author{Lucio Mansilla - Brenda Dichiara}
 \date{\today}
-
 \begin{document}
-
 \maketitle
 
-
 \section{Introducción / Problema}
-El Juego de la Vida de Conway, comúnmente conocido como "Juego de la Vida", es un autómata celular que fue propuesto por el matemático británico John Horton Conway en 1970. Los autómatas celulares son modelos matemáticos para sistemas dinámicos que evolucionan en pasos de tiempo discretos(generaciones). A pesar de su simplicidad aparente, tienen la capacidad de simular sistemas complejos y mostrar comportamientos emergentes, siendo utilizados en diversos contextos, desde la física hasta la teoría de computación.
+El Juego de la Vida de Conway's, comúnmente conocido como "Juego de la Vida", es un autómata celular que fue propuesto por el matemático británico John Horton Conway en 1970. Los autómatas celulares son modelos matemáticos para sistemas dinámicos que evolucionan en pasos de tiempo discretos(generaciones). A pesar de su simplicidad aparente, tienen la capacidad de simular sistemas complejos y mostrar comportamientos emergentes, siendo utilizados en diversos contextos, desde la física hasta la teoría de computación.
 
-En el Juego de la Vida, cada celda en una cuadrícula bidimensional puede estar en uno de dos estados: "viva" o "muerta". Las celdas interactúan con sus ocho vecinos adyacentes en horizontal, vertical y diagonal, transicionando entre los estados de vida y muerte de acuerdo a las siguientes reglas de evolución:
+En el Juego de la Vida, cada celda que compone la cuadricula bidimensional puede estar en uno de dos estados: $viva$ o $muerta$. Las celdas interactúan con sus ocho vecinos adyacentes en horizontal, vertical y diagonal, transicionando entre los estados de vida y muerte de acuerdo a las siguientes reglas de evolución en su versión original:
 
 \begin{itemize}
-\item Cualquier celda viva con dos o tres vecinos vivos sobrevive para la siguiente generación.
-\item Cualquier celda viva con menos de dos vecinos vivos muere por soledad para la siguiente generación.
-\item Cualquier celda viva con más de tres vecinos vivos muere por superpoblación para la siguiente generación.
-\item Cualquier celda muerta con exactamente tres vecinos vivos nace para la siguiente generación.
+  \item Cualquier celda viva con dos o tres vecinos vivos sobrevive para la siguiente generación.
+  \item Cualquier celda viva con menos de dos vecinos vivos muere por soledad/aislamiento para la siguiente generación.
+  \item Cualquier celda viva con más de tres vecinos vivos muere por sobrepoblación para la siguiente generación.
+  \item Cualquier celda muerta con exactamente tres vecinos vivos nace para la siguiente generación.
 \end{itemize}
 
-Aunque estas son las reglas originales, existen muchas variantes del Juego de la Vida con diferentes reglas. Además, es posible observar la aparición de diversos patrones, algunos  estáticos, otros oscilan entre varios estados y otros se desplazan por el tablero. Estos patrones serán el objeto de estudio en las secciones posteriores de este informe.
+Estas reglas originales son comúnmente denotadas como 23/3, representando las condiciones de supervivencia y nacimiento, respectivamente. Es decir, una celda viva sobrevive si tiene 2 o 3 vecinos vivos y una celda muerta nace si tiene exactamente 3 vecinos vivos.
 
-El propósito de este proyecto es explorar la dinámica del juego de una manera visual e interactiva, para ello se implementará el mismo en PowerDEVS, una herramienta de simulación de eventos discretos basada en la teoría DEVS (Discrete Event System Specification).
+Se han desarrollado una gran cantidad de variantes. En este sistema de reglas, la denominación "S/B" (Survive/Birth) representa las condiciones para la supervivencia y el nacimiento de las células. "S" son los números de vecinos que permiten a una celda viva sobrevivir, y "B" son los números de vecinos que permiten a una celda muerta nacer. Algunas variantes que podemos destacar:
+
+\begin{itemize}
+  \item HighLife: 23/36. Similar al Juego de la Vida original, pero con la adición de que las células muertas con 6 vecinos vivos también nacen. Este juego es famoso por su patrón "replicator", el primero que se descubrió y que puede replicarse a sí mismo.
+  \item Seeds: 0/2. En esta variante, las células vivas no sobreviven y las células muertas nacen si tienen exactamente 2 vecinos vivos. Es conocido por su crecimiento muy rápido y la creación de estructuras complejas a partir de pequeñas semillas.
+\end{itemize}
+
+Es importante señalar que la mayoría de las $2^18$ posibles reglas del espacio producen universos que son o bien demasiado caóticos, o bien demasiado desolados para ser de interés. Sin embargo, es posible observar la aparición de diversos patrones, algunos  estáticos, otros oscilan entre varios estados y otros se desplazan por el tablero. Estos patrones serán el objeto de estudio en las secciones posteriores de este informe.
+
+El propósito de este proyecto es explorar la dinámica del juego de una manera visual e interactiva. Para ello, se implementará el juego en PowerDEVS, una herramienta de simulación de eventos discretos basada en la teoría DEVS (Discrete Event System Specification).
 
 \section{Especificación DEVS de una celda}
 
@@ -68,45 +75,99 @@ El DEVS que representa únicamente a una célula se define como sigue:
 donde
 
 \begin{itemize}
-  \item $X = GameState $
+  \item $X = GameState$
+
+
+        La estructura de $GameState$ se define formalmente como sigue:
+
+        \begin{itemize}
+          \item \textbf{board}: Un conjunto que representa el estado de cada célula en el tablero del juego. Cada celda en el tablero puede tener un valor de 0 (muerta) o 1 (viva).
+          \item \textbf{rows}: El número total de filas en el tablero.
+          \item \textbf{cols}: El número total de columnas en el tablero.
+          \item \textbf{SR}: Representa las reglas de supervivencia.
+          \item \textbf{BR}: Representa las reglas de nacimiento.
+        \end{itemize}
+
+
 
   \item $Y = \N \times \{0,1\}$
 
-  % S = (id, estado, vecinosVivos, vecindarioCambio, proximaAccion, sigma)
-  \item $S = \N \times \{0, 1\} \times   \R_0^+$
+  \item $S = \N \times \{0, 1\} \times  \R_0^+$
 
-    El estado es una tupla $(cid, ls, \sigma)$ donde
+        El estado es una tupla $(cid, ls, \sigma)$ donde
 
-    \begin{itemize}
-      \item $cid \in \N$ es el identificador de la célula.
-      \item $ls \in \{0, 1\}$ es el estado de la célula (1 = viva, 0 = muerta)
-      \item $\sigma \in \R_0^+$ es el tiempo restante para realizar una próxima salida.
-    \end{itemize}
+        \begin{itemize}
+          \item $cid \in \N$ es el identificador de la célula.
+          \item $ls \in \{0, 1\}$ es el estado de la célula (1 = viva, 0 = muerta)
+          \item $\sigma \in \R_0^+$ es el tiempo restante para realizar una próxima salida.
+        \end{itemize}
 
   \item $\dint(\estado) = (cid,ls,\infty)$
 
-
   \item $\dext(\estado, e, (x, p)) = \begin{cases}
-    (cid,0,1) & ls == 1 \land \not \in SR  \\
-    (cid,1,1) & ls == 0 \land \in BR \\
-    (cid,ls,1) & \text{otherwise }
-  \end{cases}$
+            (cid,0,1)  & ls = 1 \ \land \ alives \ \not \in x.SR \\
+            (cid,1,1)  & ls = 0 \ \land \ alives \in x.BR        \\
+            (cid,ls,1) & \text{otherwise }
+          \end{cases}$
 
-    donde $alives = \text{countAlives}(x.rows,x.cols,cid,x.board)$
+        donde $alives = \text{countAlives}(x.rows,x.cols,cid,x.board)$
   \item $\lambda(\estado) = (cid,ls) $
   \item $ta(\estado) = \sigma$
-
 \end{itemize}
-    \begin{itemize}
-      \item \textbf{countAlives}: La función \textbf{countAlives} tiene como objetivo calcular el número de células vecinas que están vivas para una célula dada. Esta función recibe cuatro parámetros: el número de filas (rows) y columnas (cols) del tablero, el identificador de la célula (cell\_id) y el estado actual del tablero (board). La función opera de la siguiente manera:
 
-        \item Primero, determina la ubicación (fila y columna) de la célula dada en el tablero usando su identificador (cell\_id) y las dimensiones del tablero.
-        \item Posteriormente, recorre todas las células vecinas de la célula dada. Esto se realiza iterando a través de todas las posibles combinaciones de desplazamientos en filas y columnas en el rango de -1 a 1. 
-        \item Ignora la propia célula durante la iteración, es decir, el caso cuando tanto el desplazamiento de la fila como de la columna es cero.
-        \item Para cada célula vecina, primero verifica si está dentro de los límites del tablero. Si la célula vecina está fuera de los límites del tablero, pasa a la siguiente iteración.
-        \item Si la célula vecina está dentro de los límites, verifica si está viva, es decir, si su estado en el tablero es 1. Si es así, incrementa un contador de células vivas.
-        \item Finalmente, después de haber iterado a través de todas las células vecinas, la función devuelve el contador de células vivas.
-    \end{itemize}
+Donde $x.SR$ y $x.BR$ representan las reglas de supervivencia y nacimiento respectivamente, las cuales se explican en detalle en la Sección 1: $"$Introducción / Problema$"$.
+
+\begin{itemize}
+  \item \textbf{countAlives}: Esta función es responsable de determinar la cantidad de células vecinas vivas para una célula específica. Se le proporcionan cuatro parámetros claves: el número de filas (rows) y columnas (cols) del tablero, el identificador único de la célula (cell\_id) y el estado actual del tablero (board). La función realiza tres pasos principales:
+
+        \begin{addmargin}[1em]{0em}
+          \begin{itemize}
+            \item \textbf{Identificación}: Localiza la posición exacta de la célula dada en el tablero utilizando su identificador y las dimensiones del tablero.
+            \item \textbf{Exploración y Conteo}: Examina únicamente las células vecinas, excluyendose a sí misma, y realiza un conteo de cuantas vecinas estan vivas.
+            \item \textbf{Resultado}: Retorna la cantidad total de células vecinas vivas.
+          \end{itemize}
+        \end{addmargin}
+\end{itemize}
+
+\subsection{Mediator}
+\paragraph{}
+Como podemos apreciar, la lógica de cada célula en DEVS es relativamente sencilla. Esto se debe, en gran medida, a la presencia de un patrón de diseño muy popular en la programación, conocido como \textit{Mediator}. El Mediator permite desacoplar la lógica de las células, gestionar el tiempo de los eventos y distribuir la información del tablero. Es un patrón de diseño de comportamiento que se utiliza para reducir las comunicaciones complejas y las dependencias entre diferentes entidades.\\
+
+En el contexto de DEVS, el \textit{Mediator} se encarga de transmitir el estado inicial, así como cualquier cambio en el tablero a las células individuales. A su vez, las células informan al \textit{Mediator} sobre cualquier cambio de estado. Este proceso permite que la información se distribuya de manera independiente entre todas las células.\\
+
+Esta estrategia trae consigo una serie de ventajas significativas. En primer lugar, se simplifica el diseño de las células al no tener que lidiar con la lógica adicional para manejar los tiempos sincronizados de los eventos discretos (Por ejemplo, tener que primero actualizar y luego informar o viceversa). En segundo lugar, al eliminar la necesidad de que cada célula esté directamente conectada con todas las demás, se obtiene un sistema más flexible independiente y escalable, puesto que en un futuro solo basta con añadir una nueva célula y conectarla al \textit{Mediator} para que esta pueda interactuar con el resto del sistema siempre que se obtenga un tablero de $n$ filas y $m$ columnas.\\
+
+La especificación DEVS del \textit{Mediator} se puede describir como:
+
+\[ M = \langle X, Y, S, \dint, \dext, \lambda, ta \rangle \]
+
+
+\begin{itemize}
+  \item $X = \N \times \{0,1\}$
+
+  \item $Y = GameState$
+
+  \item $S = GameState \times  \R_0^+$\\
+
+        definiendo game $\in$ $GameState$ entonces se tiene:
+  \item $\dint(game,\sigma) = (game,\infty)$
+
+  \item $\dext(game, \sigma, (cell\_id, life\_state)) =
+          (game.board[x.cell\_id] \leftarrow x.life\_state, 1)
+        $
+
+
+  \item $\lambda(game) = game $
+  \item $ta(game,\sigma) = \sigma$
+\end{itemize}
+
+
+\subsection{Primer optimización}
+
+\subsection{Segunda optimización}
+% Aquí iría la especificación formal del Mediator.
+
+
 
 
 
@@ -125,88 +186,88 @@ Los patrones estáticos, también conocidos como "still lifes", son configuracio
   \includegraphics[width=0.75\textwidth]{../assets/still_life/block/block.png}
   \caption{Patrón bloque: un patrón estático compuesto por un cuadrado de 2x2 células. Aparece frecuentemente debido a su simplicidad.}
   \label{fig:block}
-  \end{figure}
+\end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.75\textwidth]{../assets/still_life/integral/integral.png}
   \caption{Patrón integral: este patrón estático se asemeja a la forma de un signo integral.}
   \label{fig:integral}
-  \end{figure}
+\end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.75\textwidth]{../assets/still_life/ship/ship.png}
   \caption{Patrón ship: este patrón estático se asemeja a la forma de una nave espacial.}
   \label{fig:ship}
-  \end{figure}
+\end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.75\textwidth]{../assets/still_life/honeycomb/honeycomb.png}
   \caption{Patrón honeycomb: este patrón estático se asemeja a la estructura de un panal de abejas.}
   \label{fig:honeycomb}
-  \end{figure}
+\end{figure}
 
-  \subsection{Osciladores}
-  Los osciladores son patrones que vuelven a su configuración inicial después de un número fijo de generaciones, conocido como su período. A diferencia de los patrones estáticos, los osciladores cambian su apariencia durante su ciclo de vida, pero eventualmente vuelven a su estado original. 
-  
-  \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.9\textwidth]{../assets/oscillator/blinker/blinker.png}
-    \caption{Patrón blinker: un oscilador de periodo 2. Oscila entre una orientación horizontal y vertical cada generación. Notar que en este caso hay 4 blinkers en el tablero.}
-    \label{fig:blinker}
-    \end{figure}
-  
-  \begin{figure}[H]
-      \centering
-      \includegraphics[width=0.9\textwidth]{../assets/oscillator/toad/toad.png}
-      \caption{Patrón toad: un oscilador de periodo 2 que oscila entre dos configuraciones.}
-      \label{fig:toad}
-  \end{figure}
-  
-  \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.7\textwidth]{../assets/oscillator/octagon_2/octagon_2.png}
-        \caption{Patrón octagon: un oscilador de periodo 5 que se desplaza en un ciclo de rotación.}
-        \label{fig:octagon}
-  \end{figure}
-  
-  \begin{figure}[H]
-        \centering
-        \includegraphics[width=0.7\textwidth]{../assets/oscillator/mazing/mazing.jpg}
-        \caption{Patrón mazing: un oscilador de periodo 4 que oscila entre una forma cuadrada y una forma de cruz.}
-        \label{fig:mazing}
-  \end{figure}
-  
-  \subsection{Naves espaciales}
-  Las naves espaciales son patrones que se trasladan a través de la cuadrícula mientras oscilan. El ejemplo más conocido es la "nave ligera" (o "glider" en inglés), que se desplaza diagonalmente a través de la cuadrícula mientras oscila entre cuatro configuraciones diferentes.
-  \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.87\textwidth]{../assets/space_ships/glider/glider_12.jpg}
-  
-    \label{fig:glider}
-  \end{figure}
-  \vspace*{-10mm} % Reduce el espacio vertical aquí. Ajusta el valor según sea necesario.
-  \begin{figure}[H]
-    \centering
-    \includegraphics[width=0.87\textwidth]{../assets/space_ships/glider/glider_12_24.jpg}
-    \caption{Patrón glider, generaciones 12-24: continúa su desplazamiento diagonal.}
-    \label{fig:glider_12_24}
-  \end{figure}
-  
-  \begin{figure}[H]
-      \centering
-      \includegraphics[width=1\textwidth]{../assets/space_ships/LWSS/LWSS.jpg}
-      \caption{Patrón LWSS (Nave Ligera de Espacio Medio): una nave espacial que se desplaza horizontalmente mientras oscila en una secuencia de cuatro configuraciones.}
-      \label{fig:LWS}
-  \end{figure}
-  
-  \begin{figure}[H]
-    \centering
-    \includegraphics[width=1\textwidth]{../assets/space_ships/MWSS/MWSS.png}
-    \caption{Patrón MWSS (Nave de Peso Medio del Espacio): se desplaza horizontalmente por el tablero, el tamaño intermedio entre las naves espaciales LWSS y HWSS.}
-    \label{fig:MWSS}
+\subsection{Osciladores}
+Los osciladores son patrones que vuelven a su configuración inicial después de un número fijo de generaciones, conocido como su período. A diferencia de los patrones estáticos, los osciladores cambian su apariencia durante su ciclo de vida, pero eventualmente vuelven a su estado original.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{../assets/oscillator/blinker/blinker.png}
+  \caption{Patrón blinker: un oscilador de periodo 2. Oscila entre una orientación horizontal y vertical cada generación. Notar que en este caso hay 4 blinkers en el tablero.}
+  \label{fig:blinker}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\textwidth]{../assets/oscillator/toad/toad.png}
+  \caption{Patrón toad: un oscilador de periodo 2 que oscila entre dos configuraciones.}
+  \label{fig:toad}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\textwidth]{../assets/oscillator/octagon_2/octagon_2.png}
+  \caption{Patrón octagon: un oscilador de periodo 5 que se desplaza en un ciclo de rotación.}
+  \label{fig:octagon}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\textwidth]{../assets/oscillator/mazing/mazing.jpg}
+  \caption{Patrón mazing: un oscilador de periodo 4 que oscila entre una forma cuadrada y una forma de cruz.}
+  \label{fig:mazing}
+\end{figure}
+
+\subsection{Naves espaciales}
+Las naves espaciales son patrones que se trasladan a través de la cuadrícula mientras oscilan. El ejemplo más conocido es la "nave ligera" (o "glider" en inglés), que se desplaza diagonalmente a través de la cuadrícula mientras oscila entre cuatro configuraciones diferentes.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.87\textwidth]{../assets/space_ships/glider/glider_12.jpg}
+
+  \label{fig:glider}
+\end{figure}
+\vspace*{-10mm} % Reduce el espacio vertical aquí. Ajusta el valor según sea necesario.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.87\textwidth]{../assets/space_ships/glider/glider_12_24.jpg}
+  \caption{Patrón glider, generaciones 12-24: continúa su desplazamiento diagonal.}
+  \label{fig:glider_12_24}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{../assets/space_ships/LWSS/LWSS.jpg}
+  \caption{Patrón LWSS (Nave Ligera de Espacio Medio): una nave espacial que se desplaza horizontalmente mientras oscila en una secuencia de cuatro configuraciones.}
+  \label{fig:LWS}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{../assets/space_ships/MWSS/MWSS.png}
+  \caption{Patrón MWSS (Nave de Peso Medio del Espacio): se desplaza horizontalmente por el tablero, el tamaño intermedio entre las naves espaciales LWSS y HWSS.}
+  \label{fig:MWSS}
 \end{figure}
 
 \begin{figure}[H]
