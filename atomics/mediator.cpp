@@ -46,13 +46,16 @@ for (size_t i = 0; i < survivor_rules.length(); i++) {
     char c = survivor_rules[i];
     if (isdigit(c)) {
         game->survivor_rules[c - '0'] = true;
-    }
+    }else{
+					 game->survivor_rules[i] = false; };
 }
 for (size_t i = 0; i < birth_rules.length(); i++) {
     char c = birth_rules[i];
     if (isdigit(c)) {
         game->birth_rules[c - '0'] = true;
     }
+else{
+					 game->survivor_rules[i] = false; };
 }
 
 file.close();
@@ -90,13 +93,15 @@ printLog("MEDIATOR: Tablero\n");
 
 for(int i=0; i<game->rows; i++) {
     for(int j=0; j<game->cols; j++) {
-        state = (game->storage[i*game->rows + j] == 1) ? 'V' : 'M';
+        // Change the indexing to 'i * game->cols + j'
+        state = (game->storage[i*game->cols + j] == 1) ? 'V' : 'M';
         printLog("%c ", state);
     }
     printLog("\n");
 }
 
 return Event(game, 0);
+
 }
 void mediator::exit() {
 //Code executed at the end of the simulation.

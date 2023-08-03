@@ -197,7 +197,7 @@ Coupled
             Description = Atomic DEVS model
             Graphic
                 {
-                Position = -17880 ; 1890
+                Position = -17805 ; 1815
                 Dimension = 675 ; 720
                 Direction = Right
                 Color = 15
@@ -268,8 +268,8 @@ Coupled
             {
             Source = Cmp ;  10 ;  1 ; 0
             Sink = Cmp ;  1 ;  1 ; -1
-            PointX = -17100 ; -14715 ; -14715
-            PointY = 2250 ; 2250 ; -4125
+            PointX = -17025 ; -14715 ; -14715
+            PointY = 2175 ; 2175 ; -4125
             }
         Line
             {
@@ -331,8 +331,8 @@ Coupled
             {
             Source = Cmp ;  1 ;  1 ; 0
             Sink = Cmp ;  10 ;  1 ; -1
-            PointX = -13800 ; -18015 ; -18015
-            PointY = -4125 ; -4125 ; 2250
+            PointX = -13800 ; -17940 ; -17940
+            PointY = -4125 ; -4125 ; 2175
             }
         }
     }

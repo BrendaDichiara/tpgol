@@ -13,9 +13,8 @@ typedef struct
     int *storage;
     int rows;
     int cols;
-    bool survivor_rules[9]; 
-    bool birth_rules[9]; 
+    int survivor_rules[9];
+    int birth_rules[9];
 } GameState;
-
 
 #endif

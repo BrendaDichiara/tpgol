@@ -4,11 +4,10 @@ int suma(int a, int b)
 {
     return a + b;
 }
-
 int count_alives(int rows, int cols, int cell_id, int *board)
 {
     int count_alives = 0;
-    int row = cell_id / rows;
+    int row = cell_id / cols; // Here, you should divide by cols not rows
     int col = cell_id % cols;
     for (int rowDelta = -1; rowDelta <= 1; rowDelta++)
     {
@@ -25,7 +24,7 @@ int count_alives(int rows, int cols, int cell_id, int *board)
             if (newRow < 0 || newRow >= rows || newCol < 0 || newCol >= cols)
                 continue;
 
-            int neighbor = newRow * rows + newCol;
+            int neighbor = newRow * cols + newCol; // Here, you should multiply by cols not rows
             if (board[neighbor] == 1)
                 count_alives++;
         }

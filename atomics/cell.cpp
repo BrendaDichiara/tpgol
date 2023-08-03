@@ -26,8 +26,8 @@ void cell::dext(Event x, double t) {
 //     'e' is the time elapsed since last transition
 GameState* game = (GameState*)x.value;
 int cid = state[CID];
-int alives = count_alives(game->rows,game->cols,cid,game->storage);
 
+int alives = count_alives(game->rows,game->cols,cid,game->storage);
 state[LIFE_STATE] = game->storage[cid];
 
 // Cell is currently alive
