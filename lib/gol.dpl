@@ -1002,8 +1002,8 @@ Coupled
                 }
             Parameters
                 {
-                input = Str; toad_5 ; filename
-                output = Str; toad_5 ; filename
+                input = Str; blinker_5 ; filename
+                output = Str; blinker_5 ; filename
                 }
             }
         Atomic
