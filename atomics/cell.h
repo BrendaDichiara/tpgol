@@ -10,9 +10,6 @@
 
 
 class cell: public Simulator { 
-// Declare the state,
-// output variables
-// and parameters
 double sigma;
 float inf;
 int state[2];

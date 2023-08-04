@@ -21,7 +21,7 @@ int* storage;
 double sigma;
 float inf;
 GameState* game;
-
+std::string output_filename_str;
 public:
 	mediator(const char *n): Simulator(n) {};
 	void init(double, ...);

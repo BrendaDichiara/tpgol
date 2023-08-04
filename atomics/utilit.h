@@ -5,12 +5,11 @@
 #define ALIVE 1
 #define DEAD 0
 
-int suma(int a, int b);
 int count_alives(int rows, int cols, int cell_id, int *board);
 
 typedef struct
 {
-    int *storage;
+    int *board;
     int rows;
     int cols;
     int survivor_rules[9];

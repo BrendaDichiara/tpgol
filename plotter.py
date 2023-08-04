@@ -11,14 +11,31 @@ def parse_args():
         The parsed command-line arguments.
     """
     parser = argparse.ArgumentParser()
-    parser.add_argument("-N", "--N", type=int, help="The number of rows in board.")
-    parser.add_argument("-M", "--M", type=int, help="The number of columns in board.")
-    parser.add_argument("-i", "--input_file", type=str, help="The name of the input file.")
-    parser.add_argument("-o", "--output_file", type=str, help="The name of the output file.")
+    parser.add_argument("-i", "--input_file", type=str, help="The name of the input file.", required=True)
+    parser.add_argument("-o", "--output_file", type=str, help="The name of the output file.", required=True)
       
     return parser.parse_args()
 
 args = parse_args()
+
+def get_board_dimensions(input_file_path):
+    """
+    This function reads the input file and determines the dimensions of the board.
+
+    Returns:
+        N: The number of rows in the board.
+        M: The number of columns in the board.
+    """
+    with open(input_file_path, 'r') as file:
+        lines = file.readlines()
+
+    start_index = lines.index("MEDIATOR: Tablero\n") + 1
+    stop_index = lines.index("MEDIATOR: Tablero\n", start_index)
+
+    N = stop_index - start_index
+    M = len(lines[start_index].split())
+
+    return N, M
 
 def read_file(file_name):
   """
@@ -32,38 +49,36 @@ def read_file(file_name):
     list
       A list of boards, where each board is a numpy array.
   """
-  file_name = f'../output/gol/{file_name}.log'
+  file_name = f'../output/{file_name}.log'
   with open(file_name, 'r') as file:
     lines = file.readlines()
-
+  N,M = get_board_dimensions(file_name)
   boards = []
   current_board = []
 
   for line in lines:
     if line.strip() == 'MEDIATOR: Tablero':
       current_board = []
-    elif line.strip() == 'Simulation Initialized':
-      continue
     else:
       row = [0 if cell == 'M' else 1 for cell in line.split()]
       current_board.append(row)
       
-      if len(current_board) == args.N:
+      if len(current_board) == N:
         boards.append(np.array(current_board))
 
-  return boards
+  return boards,N,M
 
 def plot_simulation():
   """
      This function reads the simulation boards from an input file and plots them as an animation.
   """
-  boards = read_file(args.input_file)
+  boards,N,M = read_file(args.input_file)
   fig, ax = plt.subplots()
 
-  for i in range(args.M):
+  for i in range(M):
     plt.axvline(x=i + 0.5, color='gray', lw=2)
 
-  for j in range(args.N):
+  for j in range(N):
     plt.axhline(y=j + 0.5, color='gray', lw=2)
 
   plt.xticks([])
@@ -76,7 +91,7 @@ def plot_simulation():
     ax.set_title(f"Gen {i}")  
  
   ani = animation.FuncAnimation(fig, animate, frames=len(boards), interval=1000, repeat=False)
-  ani.save(f'{args.output_file}.gif', writer='PillowWriter', fps=1)
+  ani.save(f'{args.output_file}.gif', writer='Pillow', fps=1)
   
   plt.show()
 
