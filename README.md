@@ -103,7 +103,7 @@ Por ejemplo, un blinker en un 3x3 se vería de la siguiente manera:
 
 Puesto que la creación de patrones en este formato puede ser un proceso laborioso, especialmente para tableros de grandes dimensiones, para crear patrones de manera visual y exportarlos en el formato correcto, puedes usar la herramienta de configuración 'Settings GoL'.
 
-![settings gol pestaña creación de estado](report/readme_imgs/create_state.png)
+![settings gol pestaña creación de estado](assets/gui/pestania2.png)
 
 Nota: Para más información sobre la herramienta de ayuda, se provee una guía de uso en `docs/User_Guide_Settings_gol.pdf`.
 
@@ -126,6 +126,15 @@ Si bien es posible leer el tablero en el registro mismo que se guarda en output/
 ```bash
 python plotter.py -i <archivo a plotear> -o <nombre del archivo de salida>
 ```
+
+
+## Tableros de gran tamaño, conexiones, esquemas PDM
+
+Crear las conexiones entre células y mediator es todo un desafio a medida que el tablero crece en dimensiones. Para facilitar este proceso, la herramienta proporciona una funcionalidad para generar automáticamente esquemas PDM de dimensiones NxM listos para ser ejecutados en PowerDEVS.
+
+Ingrese las dimensiones deseadas en los campos de texto proporcionados y haga clic en el botón "Generar PDM". La herramienta generará automáticamente un archivo PDM con un esquema de las dimensiones especificadas.
+
+![settings gol pestaña creación de esquema PDM](assets/gui/pestania3.png)
 
 
 ## Reporte
