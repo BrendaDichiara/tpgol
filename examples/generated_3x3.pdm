@@ -26,15 +26,16 @@ Coupled
             Description = Atomic DEVS model
             Graphic
                 {
-                Position = -29190 ; -14955
-                Dimension = 480 ; 825
+                Position = -29205 ; -14985
+                Dimension = 510 ; 870
                 Direction = Right
                 Color = 4
                 Icon = None
                 }
             Parameters
                 {
-                filename = Str; initial ; str
+                input = Str; initial ; filename
+                output = Str; default ; filename
                 }
             }
         Atomic
