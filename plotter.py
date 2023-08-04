@@ -47,15 +47,15 @@ def read_file(file_name):
 
   return boards
 
-def main():
- 
-  # Read the data from the input file.
-  boards = read_file(args.input_file)
+def plot_simulation():
 
-  # Plot the data.
+  """
+     This function reads the simulation boards from an input file and plots them as an animation.
+  """
+ 
+  boards = read_file(args.input_file)
   fig, ax = plt.subplots()
 
-  # Generate line of grid
   for i in range(args.M):
     plt.axvline(x=i + 0.5, color='gray', lw=2)
 
@@ -79,4 +79,4 @@ def main():
   plt.show()
 
 if __name__ == "__main__":
-  main()
+  plot_simulation()
