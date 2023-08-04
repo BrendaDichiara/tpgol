@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.5.21)  4 AUG 2023 08:14
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (TeX Live 2022/CVE-2023-32700 patched) (preloaded format=pdflatex 2023.5.21)  4 AUG 2023 08:38
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -680,90 +680,102 @@ Package pdftex.def Info: ../assets/pdevs/SettingsDevs.png  used on input line 24
 <../assets/still_life/block/block.png, id=47, 958.58125pt x 347.2975pt>
 File: ../assets/still_life/block/block.png Graphic file (type png)
 <use ../assets/still_life/block/block.png>
-Package pdftex.def Info: ../assets/still_life/block/block.png  used on input line 260.
+Package pdftex.def Info: ../assets/still_life/block/block.png  used on input line 261.
 (pdftex.def)             Requested size: 330.63559pt x 119.79126pt.
 <../assets/still_life/integral/integral.png, id=48, 958.58125pt x 347.2975pt>
 File: ../assets/still_life/integral/integral.png Graphic file (type png)
 <use ../assets/still_life/integral/integral.png>
-Package pdftex.def Info: ../assets/still_life/integral/integral.png  used on input line 267.
+Package pdftex.def Info: ../assets/still_life/integral/integral.png  used on input line 268.
 (pdftex.def)             Requested size: 330.63559pt x 119.79126pt.
 <../assets/still_life/ship/ship.png, id=49, 958.58125pt x 347.2975pt>
 File: ../assets/still_life/ship/ship.png Graphic file (type png)
 <use ../assets/still_life/ship/ship.png>
-Package pdftex.def Info: ../assets/still_life/ship/ship.png  used on input line 274.
+Package pdftex.def Info: ../assets/still_life/ship/ship.png  used on input line 275.
 (pdftex.def)             Requested size: 330.63559pt x 119.79126pt.
  [7 <../assets/still_life/block/block.png> <../assets/still_life/integral/integral.png>]
 <../assets/still_life/honeycomb/honeycomb.png, id=56, 958.58125pt x 347.2975pt>
 File: ../assets/still_life/honeycomb/honeycomb.png Graphic file (type png)
 <use ../assets/still_life/honeycomb/honeycomb.png>
-Package pdftex.def Info: ../assets/still_life/honeycomb/honeycomb.png  used on input line 281.
+Package pdftex.def Info: ../assets/still_life/honeycomb/honeycomb.png  used on input line 282.
 (pdftex.def)             Requested size: 330.63559pt x 119.79126pt.
 <../assets/oscillator/blinker/blinker.png, id=57, 1247.66125pt x 347.2975pt>
 File: ../assets/oscillator/blinker/blinker.png Graphic file (type png)
 <use ../assets/oscillator/blinker/blinker.png>
-Package pdftex.def Info: ../assets/oscillator/blinker/blinker.png  used on input line 291.
+Package pdftex.def Info: ../assets/oscillator/blinker/blinker.png  used on input line 292.
 (pdftex.def)             Requested size: 396.76001pt x 110.43796pt.
 <../assets/oscillator/toad/toad.png, id=58, 1247.66125pt x 347.2975pt>
 File: ../assets/oscillator/toad/toad.png Graphic file (type png)
 <use ../assets/oscillator/toad/toad.png>
-Package pdftex.def Info: ../assets/oscillator/toad/toad.png  used on input line 298.
+Package pdftex.def Info: ../assets/oscillator/toad/toad.png  used on input line 299.
 (pdftex.def)             Requested size: 396.76001pt x 110.43796pt.
  [8 <../assets/still_life/ship/ship.png> <../assets/still_life/honeycomb/honeycomb.png> <../assets/oscillator/blinker/blinker.png>]
 <../assets/oscillator/octagon_2/octagon_2.png, id=65, 1656.1875pt x 1204.5pt>
 File: ../assets/oscillator/octagon_2/octagon_2.png Graphic file (type png)
 <use ../assets/oscillator/octagon_2/octagon_2.png>
-Package pdftex.def Info: ../assets/oscillator/octagon_2/octagon_2.png  used on input line 305.
+Package pdftex.def Info: ../assets/oscillator/octagon_2/octagon_2.png  used on input line 306.
 (pdftex.def)             Requested size: 308.59187pt x 224.428pt.
 <../assets/oscillator/mazing/mazing.jpg, id=66, 878.53218pt x 618.81187pt>
 File: ../assets/oscillator/mazing/mazing.jpg Graphic file (type jpg)
 <use ../assets/oscillator/mazing/mazing.jpg>
-Package pdftex.def Info: ../assets/oscillator/mazing/mazing.jpg  used on input line 312.
+Package pdftex.def Info: ../assets/oscillator/mazing/mazing.jpg  used on input line 313.
 (pdftex.def)             Requested size: 308.59187pt x 217.36166pt.
  [9 <../assets/oscillator/toad/toad.png> <../assets/oscillator/octagon_2/octagon_2.png>]
 <../assets/space_ships/glider/glider_12.jpg, id=72, 1739.49875pt x 1373.13pt>
 File: ../assets/space_ships/glider/glider_12.jpg Graphic file (type jpg)
 <use ../assets/space_ships/glider/glider_12.jpg>
-Package pdftex.def Info: ../assets/space_ships/glider/glider_12.jpg  used on input line 321.
+Package pdftex.def Info: ../assets/space_ships/glider/glider_12.jpg  used on input line 322.
 (pdftex.def)             Requested size: 383.53513pt x 302.76001pt.
  [10 <../assets/oscillator/mazing/mazing.jpg>]
 <../assets/space_ships/glider/glider_12_24.jpg, id=76, 1739.49875pt x 1373.13pt>
 File: ../assets/space_ships/glider/glider_12_24.jpg Graphic file (type jpg)
 <use ../assets/space_ships/glider/glider_12_24.jpg>
-Package pdftex.def Info: ../assets/space_ships/glider/glider_12_24.jpg  used on input line 328.
+Package pdftex.def Info: ../assets/space_ships/glider/glider_12_24.jpg  used on input line 329.
 (pdftex.def)             Requested size: 383.53513pt x 302.76001pt.
 <../assets/space_ships/LWSS/LWSS.jpg, id=77, 1135.24126pt x 599.23875pt>
 File: ../assets/space_ships/LWSS/LWSS.jpg Graphic file (type jpg)
 <use ../assets/space_ships/LWSS/LWSS.jpg>
-Package pdftex.def Info: ../assets/space_ships/LWSS/LWSS.jpg  used on input line 335.
+Package pdftex.def Info: ../assets/space_ships/LWSS/LWSS.jpg  used on input line 336.
 (pdftex.def)             Requested size: 440.84746pt x 232.70552pt.
  [11 <../assets/space_ships/glider/glider_12.jpg> <../assets/space_ships/glider/glider_12_24.jpg>]
 <../assets/space_ships/MWSS/MWSS.png, id=81, 1135.24126pt x 599.23875pt>
 File: ../assets/space_ships/MWSS/MWSS.png Graphic file (type png)
 <use ../assets/space_ships/MWSS/MWSS.png>
-Package pdftex.def Info: ../assets/space_ships/MWSS/MWSS.png  used on input line 342.
+Package pdftex.def Info: ../assets/space_ships/MWSS/MWSS.png  used on input line 343.
 (pdftex.def)             Requested size: 440.84746pt x 232.70552pt.
 <../assets/space_ships/HWSS/HWSS.png, id=82, 1135.24126pt x 599.23875pt>
 File: ../assets/space_ships/HWSS/HWSS.png Graphic file (type png)
 <use ../assets/space_ships/HWSS/HWSS.png>
-Package pdftex.def Info: ../assets/space_ships/HWSS/HWSS.png  used on input line 349.
+Package pdftex.def Info: ../assets/space_ships/HWSS/HWSS.png  used on input line 350.
 (pdftex.def)             Requested size: 440.84746pt x 232.70552pt.
- [12 <../assets/space_ships/LWSS/LWSS.jpg> <../assets/space_ships/MWSS/MWSS.png>] [13 <../assets/space_ships/HWSS/HWSS.png>] (./report.aux
+ [12 <../assets/space_ships/LWSS/LWSS.jpg> <../assets/space_ships/MWSS/MWSS.png>]
+<../assets/space_ships/gosper_glider_gun/gosper_glider_gun.png, id=87, 958.58125pt x 469.755pt>
+File: ../assets/space_ships/gosper_glider_gun/gosper_glider_gun.png Graphic file (type png)
+<use ../assets/space_ships/gosper_glider_gun/gosper_glider_gun.png>
+Package pdftex.def Info: ../assets/space_ships/gosper_glider_gun/gosper_glider_gun.png  used on input line 367.
+(pdftex.def)             Requested size: 440.84746pt x 216.03975pt.
+ [13 <../assets/space_ships/HWSS/HWSS.png>]
+<../assets/oscillator/pulsar/pulsar.png, id=93, 958.58125pt x 689.57625pt>
+File: ../assets/oscillator/pulsar/pulsar.png Graphic file (type png)
+<use ../assets/oscillator/pulsar/pulsar.png>
+Package pdftex.def Info: ../assets/oscillator/pulsar/pulsar.png  used on input line 376.
+(pdftex.def)             Requested size: 330.63559pt x 237.85144pt.
+ [14 <../assets/space_ships/gosper_glider_gun/gosper_glider_gun.png> <../assets/oscillator/pulsar/pulsar.png>] [15] (./report.aux
 LaTeX Info: Redefining \. on input line 9.
 LaTeX Info: Redefining \% on input line 9.
 ) ) 
 Here is how much of TeX's memory you used:
- 30014 strings out of 476182
- 749166 string characters out of 5796604
+ 30035 strings out of 476182
+ 750001 string characters out of 5796604
  1862793 words of memory out of 6000000
- 49802 multiletter control sequences out of 15000+600000
+ 49819 multiletter control sequences out of 15000+600000
  527353 words of font info for 70 fonts, out of 8000000 for 9000
  1137 hyphenation exceptions out of 8191
  108i,12n,106p,816b,609s stack positions out of 10000i,1000n,20000p,200000b,200000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on report.pdf (13 pages, 1471153 bytes).
+Output written on report.pdf (15 pages, 1570134 bytes).
 PDF statistics:
- 155 PDF objects out of 1000 (max. 8388607)
- 81 compressed objects within 1 object stream
+ 165 PDF objects out of 1000 (max. 8388607)
+ 85 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 108 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 118 words of extra memory for PDF output out of 10000 (max. 10000000)
 

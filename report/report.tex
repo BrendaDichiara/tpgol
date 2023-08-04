@@ -250,7 +250,8 @@ Para un entendimiento completo de cómo utilizar esta herramienta y sus otras fu
 
 
 \section{Patrones}
-El Juego de la Vida, concebido por el matemático británico John Horton Conway, es famoso por la vasta variedad de patrones que emergen de sus simples reglas, en particular, las reglas 23/3. Los patrones se definen como configuraciones de células que se repiten tras un número determinado de generaciones, también conocido como su "periodo". Los patrones pueden ser estáticos, oscilantes o móviles, dependiendo de cómo cambian a lo largo del tiempo. En las secciones siguientes se presentarán ejemplos de estos patrones bajo las reglas 23/3.
+El Juego de la Vida, concebido por el matemático británico John Horton Conway, es famoso por la vasta variedad de patrones que emergen de sus simples reglas, en particular, las originales 23/3. Los patrones se definen como configuraciones de células que se repiten tras un número determinado de generaciones, también conocido como su "periodo". Los mismos pueden ser estáticos, oscilantes o móviles, dependiendo de cómo cambian a lo largo del tiempo. En las secciones siguientes se presentarán ejemplos de estos patrones bajo las reglas 23/3 y en tableros de 8x8.
+En la sección \ref{sec:complejos} se explorarán patrones más complejos que requieren tableros de mayor tamaño para su visualización.
 
 \subsection{Patrones estáticos}
 Los patrones estáticos, también conocidos como "still lifes", son configuraciones de células que no cambian de una generación a la siguiente, es decir, su periodo es 1. A continuación, se presentan ejemplos de estos patrones:
@@ -355,19 +356,41 @@ Las naves espaciales son patrones que se trasladan a través de la cuadrícula m
 \subsection{Methuselahs}
 Los Methuselahs son patrones que evolucionan durante un número grande de generaciones antes de estabilizarse en un patrón estático, un oscilador o una nave espacial. El ejemplo más conocido es el "acorn", que evoluciona durante 5206 generaciones antes de estabilizarse en 633 células vivas, incluyendo 11 osciladores, 2 naves espaciales y 1 patrón estático.
 
-% Aquí puedes insertar una figura de una nave ligera u otra nave espacial.
 
-\subsection{Patrones Propios}
-Sección dedicada a patrones que encontramos por accidente/pruebas.
-
-\subsection{Patrones complejos}
+\subsection{Patrones complejos}\label{sec:complejos}
 Además de estos patrones simples, también existen patrones más complejos en el Juego de la Vida. Algunos de estos pueden "disparar" naves espaciales, otros pueden "construir" patrones adicionales, y otros pueden incluso comportarse como máquinas de Turing universales, lo que significa que pueden computar cualquier función computable.
 
-% Aquí puedes insertar figuras de patrones complejos y discutir sus propiedades.
+Algunos patrones complejos son capaces de "disparar" naves espaciales, actuando como una especie de cañón. Un ejemplo famoso de este tipo de patrones es el "Gosper Glider Gun". Este patrón, que fue descubierto por Bill Gosper, genera un glider cada 30 generaciones que se desplaza indefinidamente a través del tablero.
 
-Estos patrones ilustran la increíble diversidad de comportamientos que pueden surgir del Juego de la Vida. En las siguientes secciones, veremos cómo estos patrones pueden ser generados e investigados usando PowerDEVS.
+\begin{figure}[H]
+  \centering
+ \includegraphics[width=1\textwidth]{../assets/space_ships/gosper_glider_gun/gosper_glider_gun.png}
+  \caption{Patrón Gosper Glider Gun: genera un glider cada 30 generaciones.}
+  \label{fig:gosper_glider_gun}
+\end{figure}
+
+Por otro lado, existe el "Pulsar",que si bien es un oscilador de periodo 3, para poder representarlo se necesita mínimo un tablero de 15x15. Está compuesto por un arreglo de células que $"$pulsan$"$ entre tres configuraciones distintas.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.75\textwidth]{../assets/oscillator/pulsar/pulsar.png}
+  \caption{Patrón Pulsar: oscilador de periodo 3.}
+  \label{fig:pulsar}
+\end{figure}
+
 
 
 
 \section{Conclusiones}
+
+A lo largo de este trabajo hemos explorado el Juego de la Vida de Conway, un autómata celular que, a pesar de sus reglas simples, puede generar una variedad impresionante de patrones complejos. Hemos implementado este juego en PowerDEVS, una herramienta de simulación de eventos discretos, utilizando el patrón de diseño del Mediador para coordinar las interacciones entre las células individuales. 
+
+Hemos demostrado que PowerDEVS, gracias a su versatilidad y eficiencia, es una excelente herramienta para estudiar este tipo de sistemas dinámicos. La implementación del patrón Mediador permitió desacoplar la lógica de las células, simplificar su diseño y mejorar la escalabilidad del sistema. La optimización implementada, que reduce las comunicaciones innecesarias con el Mediador, tuvo un impacto significativo en la eficiencia del sistema, especialmente para tableros de juego grandes y simulaciones que se ejecutan durante un número considerable de generaciones.
+
+Además, hemos desarrollado una interfaz gráfica de usuario en Python para facilitar la configuración de tableros personalizados en PowerDEVS. Esta herramienta, 'Settings GoL', permite generar tableros de dimensiones NxM en formato PDM, reduciendo significativamente el tiempo y el esfuerzo requeridos para la configuración de tableros personalizados.
+
+Finalmente, hemos presentado una variedad de patrones que pueden surgir en el Juego de la Vida, desde patrones estáticos simples y osciladores hasta patrones más complejos como naves espaciales y Methuselahs. Esta amplia gama de comportamientos emergentes subraya la riqueza y la profundidad del Juego de la Vida y proporciona una ilustración fascinante de cómo reglas simples pueden dar lugar a comportamientos complejos y no predecibles.
+
+En futuros trabajos, podría ser interesante explorar otras reglas del Juego de la Vida, más allá de las reglas originales de Conway, para ver qué otros tipos de patrones pueden surgir. Además, sería interesante investigar cómo se pueden utilizar otras técnicas de optimización para mejorar aún más la eficiencia y escalabilidad de la simulación.
 \end{document}
+

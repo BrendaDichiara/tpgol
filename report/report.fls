@@ -908,6 +908,16 @@ INPUT ../assets/space_ships/HWSS/HWSS.png
 INPUT ../assets/space_ships/HWSS/HWSS.png
 INPUT ../assets/space_ships/HWSS/HWSS.png
 INPUT ../assets/space_ships/HWSS/HWSS.png
+INPUT ../assets/space_ships/gosper_glider_gun/gosper_glider_gun.png
+INPUT ../assets/space_ships/gosper_glider_gun/gosper_glider_gun.png
+INPUT ../assets/space_ships/gosper_glider_gun/gosper_glider_gun.png
+INPUT ../assets/space_ships/gosper_glider_gun/gosper_glider_gun.png
+INPUT ../assets/space_ships/gosper_glider_gun/gosper_glider_gun.png
+INPUT ../assets/oscillator/pulsar/pulsar.png
+INPUT ../assets/oscillator/pulsar/pulsar.png
+INPUT ../assets/oscillator/pulsar/pulsar.png
+INPUT ../assets/oscillator/pulsar/pulsar.png
+INPUT ../assets/oscillator/pulsar/pulsar.png
 INPUT report.aux
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc

@@ -105,7 +105,7 @@ Puesto que la creación de patrones en este formato puede ser un proceso laborio
 
 ![settings gol pestaña creación de estado](report/readme_imgs/create_state.png)
 
-Nota: Para más información sobre la herramienta de ayuda, se provee una guía de uso en `docs/User_Guide_Settings_gol.pdf.pdf`
+Nota: Para más información sobre la herramienta de ayuda, se provee una guía de uso en `docs/User_Guide_Settings_gol.pdf`.
 
 #### Visualización.
 
