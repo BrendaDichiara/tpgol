@@ -162,31 +162,6 @@ La especificación DEVS del \textit{Mediator} se puede describir como:
   \item $ta(game,\sigma) = \sigma$
 \end{itemize}
 
-\subsection{Optimización}
-
-La optimización implementada en la especificación DEVS de la célula se basa en minimizar las comunicaciones innecesarias con el Mediador. Específicamente, evita enviar actualizaciones de estado al Mediador cuando el estado de una célula permanece sin cambios.
-
-En una simulación con un tablero de 8x8 y un tiempo de ejecución de \( t = 10.000 \), la implementación de esta optimización redujo el tiempo de ejecución de 754 ms a 2 ms. Esta optimización puede tener un impacto aún mayor en tableros de juego más grandes y simulaciones que se ejecutan durante un mayor número de generaciones. Notablemente, es especialmente eficaz en patrones donde ciertas áreas del tablero permanecen estáticas durante largos períodos de tiempo. Por ejemplo, en simulaciones con el patrón "glider", se observaron mejoras de eficiencia similares.
-
-\begin{figure}[ht]
-  \begin{minipage}[b]{0.44\linewidth}
-    \centering
-    \includegraphics[width=\textwidth]{../assets/pdevs/754ms.png}
-    \caption{Simulación sin optimización.}
-    \label{fig:no_optimization}
-  \end{minipage}
-  \hspace{0.5cm}
-  \begin{minipage}[b]{0.455\linewidth}
-    \centering
-    \includegraphics[width=\textwidth]{../assets/pdevs/2ms.png}
-    \caption{Simulación con optimización.}
-    \label{fig:optimization}
-  \end{minipage}
-\end{figure}
-
-Esta estrategia aporta ventajas significativas. En primer lugar, reduce la cantidad de datos a procesar y transferir, lo que puede mejorar el rendimiento. En segundo lugar, al centrarse solo en los cambios de estado, se reduce la complejidad del sistema, facilitando su comprensión y depuración. Por último, hace que el sistema sea más escalable, ya que agregar más células no aumentará la cantidad de mensajes enviados si la mayoría de las células no cambian su estado.
-
-
 
 
 
@@ -226,6 +201,34 @@ También se incorporó al proyecto una librería, en la misma se pueden encontra
   \caption{Librería}
   \label{fig:library}
 \end{figure}
+
+
+\subsection{Optimización}
+
+La optimización implementada en la especificación DEVS de la célula se basa en minimizar las comunicaciones innecesarias con el Mediador. Más específicamente, evita enviar actualizaciones de estado al Mediador cuando el estado de una célula permanece sin cambios. Esto tiene un impacto significativo en la eficiencia del sistema, especialmente para tableros de juego grandes y simulaciones que se ejecutan durante un número considerable de generaciones.
+
+La lógica detrás de esta optimización es que si el estado de una célula permanece igual (es decir, permanece viva o muerta), no hay necesidad de informar al Mediador sobre este no-evento. El Mediador ya posee el estado actual del tablero de juego, y un estado de célula inalterado no aporta ninguna información nueva. Por lo tanto, al omitir estas comunicaciones innecesarias, podemos reducir la carga de computación y comunicación tanto en las células como en el Mediador.
+
+En una simulación con un tablero de 8x8 y un tiempo de ejecución de \( t = 10.000 \), la implementación de la misma redujo el tiempo de ejecución de 754 ms a 2 ms. 
+\begin{figure}[ht]
+  \begin{minipage}[b]{0.44\linewidth}
+    \centering
+    \includegraphics[width=\textwidth]{../assets/pdevs/754ms.png}
+    \caption{Simulación sin optimización.}
+    \label{fig:no_optimization}
+  \end{minipage}
+  \hspace{0.5cm}
+  \begin{minipage}[b]{0.455\linewidth}
+    \centering
+    \includegraphics[width=\textwidth]{../assets/pdevs/2ms.png}
+    \caption{Simulación con optimización.}
+    \label{fig:optimization}
+  \end{minipage}
+\end{figure}
+
+Notablemente, es especialmente eficaz en patrones donde ciertas áreas del tablero permanecen estáticas durante largos períodos de tiempo. Por ejemplo, en simulaciones con el patrón "glider", se observaron mejoras de eficiencia similares.
+
+
 
 \subsection{Automatización y Personalización de Tableros}
 

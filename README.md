@@ -28,15 +28,15 @@ pip install -r requirements.txt
 
 La estructura del proyecto es la siguiente:
 
-- `assets/`: contiene imágenes y gifs de diferentes simulaciones/patrones.
+- `assets/`: Contiene imágenes y gifs de diferentes simulaciones/patrones.
 - `atomics/`: Modelos atómicos de PowerDEVS para el proyecto.
 - `examples/`: Incluye modelos PDM con distintas configuraciones de tableros.
 - `lib/`: Contiene archivos .dpl y assets que constituyen la biblioteca para el proyecto.
 - `patterns/`: Archivos .txt que representan diferentes patrones para el juego.
 - `docs/report.pdf`:Reporte del proyecto, experimentos e instrucciones de uso para la herramienta de configuración 'Settings GoL' en el anexo.
-- `docs/guía_de_uso_settings_gol.pdf`: Guía de uso para la herramienta de configuración 'Settings GoL'
+- `docs/User_Guide_Settings_gol.pdf`: Guía de uso para la herramienta de configuración 'Settings GoL'
 - `gen_pdm.py`: Script para generar esquemas PDM de tamaño NxM listos para ser ejecutados.
-- `gui.py` Script que permite configurar el proyecto de manera gráfica, se aconseja leer la guía de uso disponible en `docs/guía_de_uso_settings_gol`. ya que entre otras funciones, permite la creación de archivos de configuración de manera visual, asi como también la creación de patrones personalizados y esquemas PDM.
+- `gui.py` Script que permite configurar el proyecto de manera gráfica, se aconseja leer la guía de uso disponible en `docs/User_Guide_Settings_gol.pdf`. ya que entre otras funciones, permite la creación de archivos de configuración de manera visual, asi como también la creación de patrones personalizados y esquemas PDM.
 - `build.sh` Script para construir el proyecto de manera automática.
 - `restore.sh` Script para revertir PowerDEVS a su estado previo a la instalación del proyecto (útil para desinstalar el proyecto).
 
@@ -105,28 +105,26 @@ Puesto que la creación de patrones en este formato puede ser un proceso laborio
 
 ![settings gol pestaña creación de estado](report/readme_imgs/create_state.png)
 
-Nota: Para más información sobre la herramienta de ayuda, se provee una guía de uso en `docs/guía_de_uso_settings_gol.pdf`
+Nota: Para más información sobre la herramienta de ayuda, se provee una guía de uso en `docs/User_Guide_Settings_gol.pdf.pdf`
 
 #### Visualización.
 
 El modelo atómico Mediator en su segundo parámetro recibe el nombre del archivo de salida, el mismo se guarda en la carpeta raiz de PowerDevs/output/gol/nombreArchivoSalida.log, el mismo tiene el siguiente formato:
 
 ```
-Generación: 0
-<tablero>
-Generación: 1
-<tablero>
+MEDIATOR: Tablero
+<tablero> 1
+MEDIATOR: Tablero
+<tablero> 2
 .
 .
 .
-Generación: n
-<tablero>
 ```
 
-Si bien es posible visualizarlo al tablero, para una mejor visualización se provee el script `plotter.py` que permite generar un gif a partir del archivo de salida, para ello:
+Si bien es posible leer el tablero en el registro mismo que se guarda en output/,  para una mejor visualización se provee el script `plotter.py` que permite generar un gif a partir del archivo de salida con matplotlib, para ello:
 
 ```bash
-python plotter.py -N <número de filas> -M <número de columnas> -i <archivo a plotear> -o <nombre del gif>
+python plotter.py -i <archivo a plotear> -o <nombre del archivo de salida>
 ```
 
 
