@@ -3,14 +3,28 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import numpy as np
 
-def read_file(file_name,N):
-  """Leer el archivo de entrada y devolver una lista de listas de enteros.
+# Parse the command line arguments.
+parser = argparse.ArgumentParser()
+parser.add_argument("-N", "--N", type=int, help="The number of rows in board.")
+parser.add_argument("-M", "--M", type=int, help="The number of columns in board.")
+parser.add_argument("-i", "--input_file", type=str, help="The name of the input file.")
+parser.add_argument("-o", "--output_file", type=str, help="The name of the output file.")
+parser.add_argument("-p", "--plot_or_gif", type=str, choices=['plot', 'gif'], help="Specify 'plot' to generate a plot, 'gif' to generate a gif")
 
-  Args:
-    file_name: El nombre del archivo de entrada.
+args = parser.parse_args()
 
-  Returns:
-    Una lista de listas de enteros, donde cada lista representa una fila del tablero.
+
+def read_file(file_name):
+  """
+    This function reads a file and returns a list of boards.
+
+    Parameters:
+    file_name : str
+        The name of the file to read.
+
+    Returns:
+    list
+        A list of boards, where each board is a numpy array.
   """
   file_name = f'../output/gol/{file_name}.log'
   with open(file_name, 'r') as file:
@@ -18,57 +32,50 @@ def read_file(file_name,N):
 
   boards = []
   current_board = []
+
   for line in lines:
     if line.strip() == 'MEDIATOR: Tablero':
-      # Comenzamos un nuevo tablero
       current_board = []
     elif line.strip() == 'Simulation Initialized':
       continue
     else:
-      # Agregamos la línea al tablero actual
       row = [0 if cell == 'M' else 1 for cell in line.split()]
       current_board.append(row)
-      # Si el tablero está completo, lo agregamos a la lista de tableros
-      if len(current_board) == N:
+      
+      if len(current_board) == args.N:
         boards.append(np.array(current_board))
 
   return boards
 
 def main():
-  # Parse the command line arguments.
-  parser = argparse.ArgumentParser()
-  parser.add_argument("-N", "--N", type=int, default=25, help="The number of rows in the data.")
-  parser.add_argument("-M", "--M", type=int, default=38, help="The number of columns in the data.")
-  parser.add_argument("-i", "--input_file", type=str, default="logs/gosper_2.log", help="The name of the input file.")
-  parser.add_argument("-o", "--output_file", type=str, default="gosper_2.gif", help="The name of the output file.")
-
-  args = parser.parse_args()
-
+ 
   # Read the data from the input file.
-  boards = read_file(args.input_file,args.N)
+  boards = read_file(args.input_file)
 
   # Plot the data.
   fig, ax = plt.subplots()
 
-  # Generar líneas verticales
+  # Generate line of grid
   for i in range(args.M):
     plt.axvline(x=i + 0.5, color='gray', lw=2)
 
-  # Generar líneas horizontales
   for j in range(args.N):
     plt.axhline(y=j + 0.5, color='gray', lw=2)
 
   plt.xticks([])
   plt.yticks([])
 
-  im = ax.imshow(boards[0], cmap='binary', vmin=0, vmax=1)  # Primera imagen
-
+  im = ax.imshow(boards[0], cmap='binary', vmin=0, vmax=1) 
+  
   def animate(i):
-    im.set_array(boards[i])  # Actualizamos la imagen
-    ax.set_title(f"Gen {i}")  # Ajusta el título para mostrar el paso de tiempo actual
+    im.set_array(boards[i])  
+    ax.set_title(f"Gen {i}")  
 
-  ani = animation.FuncAnimation(fig, animate, frames=len(boards), interval=500, repeat=False)
-  ani.save(f'{args.output_file}.gif', writer='PillowWriter', fps=10)
+  ani = animation.FuncAnimation(fig, animate, frames=len(boards), interval=1000, repeat=False)
+  
+  if args.plot_or_gif == 'gif':
+    ani.save(f'{args.output_file}.gif', writer='PillowWriter', fps=1)
+  
   plt.show()
 
 if __name__ == "__main__":
