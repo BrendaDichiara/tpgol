@@ -69,7 +69,7 @@ chmod +x restore.sh
 ```
 Este proceso también puede ser realizado de manera gráfica utilizando el script `gui.py`
 
-![nombre_alternativo](report/readme_imgs/build.png)
+![nombre_alternativo](assets/gui/pestania1.png)
 ---
 
 
