@@ -89,12 +89,9 @@ def plot_simulation():
   def animate(i):
     im.set_array(boards[i])  
     ax.set_title(f"Gen {i}")  
-    if i < 100:
-        filename = f"{args.input_file}_{i}.png"    
-        plt.savefig(filename, bbox_inches='tight')
- 
+    
   ani = animation.FuncAnimation(fig, animate, frames=len(boards), interval=1000, repeat=False)
-  ani.save(f'{args.output_file}.gif', writer='Pillow', fps=1)
+  ani.save(f'assets/{args.output_file}.gif', writer='Pillow', fps=1)
   
   plt.show()
 
