@@ -43,7 +43,7 @@ La estructura del proyecto es la siguiente:
 
 
 
-## Configuración del Proyecto y Uso
+## Configuración del Entorno
 
 El primer paso es clonar este proyecto en su directorio raiz de PowerDevs 
     
@@ -57,7 +57,7 @@ Para configurar PowerDEVS y poder hacer uso de este proyecto así como sus ejemp
 chmod +x build.sh
 ```
 El script realiza por usted (entre otras cosas) las siguientes configuraciones:
-- Incorpora la libreria del proyecto a PowerDEVS, la misma tiene el nombre de "Game of Life".
+- Incorpora la libreria del proyecto a PowerDEVS, la misma tiene el nombre de "Game of Life" en la misma se encuentran los modelos atómicos, asi como también ejemplos de tableros de tamaños NxM (3x3),(5x5),(8x8),(25x38) listos para ser ejecutados.
 - Incorpora los modelos atómicos cell, mediator así como utilidades necesarias.
 - Incorpora una carpeta patterns que contiene patrones de ejemplo listos para ser cargados en la simulación que usted desee.
 - Incorpora una carpeta examples que contiene modelos PDM de ejemplo listos para ser ejecutados.
@@ -67,8 +67,37 @@ Si por algun motivo desea desinstalar el proyecto, se provee un script que permi
 ```bash
 chmod +x restore.sh
 ```
+Este proceso también puede ser realizado de manera gráfica utilizando el script `gui.py`
+
+![nombre_alternativo](report/readme_imgs/build.png)
+---
 
 
+## Uso 
+
+El estado inicial se obtiene de un archivo.txt, una vez seteado el proyecto, encontrará en su raiz del directorio de PowerDEVS una carpeta llamada "patterns", dentro de la misma diferentes patrones/archivos.txt, el Mediator recibe como 1er parámetro el nombre del archivo/input el cuál tiene el siguiente formato:
+
+```
+<cantidad de filas>
+<cantidad de columnas>
+<tablero inicial (0 muerto, 1 vivo)>
+<reglas de supervivencia>
+<reglas de nacimiento>
+```
+
+Por ejemplo, un blinker en un 3x3 se vería de la siguiente manera:
+
+```
+3
+3
+0 1 0
+0 1 0
+0 1 0
+23
+3
+```
+
+Puesto que la creación de patrones en este formato puede ser un proceso laborioso, especialmente para tableros de grandes dimensiones, proveemos una pestaña dentro de la herramienta de ayuda "settings GoL' que permite la creación de patrones de manera visual,
 
 
 
