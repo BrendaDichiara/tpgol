@@ -2,7 +2,6 @@
 
 Este proyecto fue desarrollado en el marco de la entrega final para la materia "Simulación". Consiste en la implementación del famoso "Juego de la Vida" de Conway utilizando PowerDEVS, un entorno de simulación de eventos discretos. 
 
-![nombre_alternativo](assets/collage.png)
 
 ## Preparación del Entorno / Dependencias
 
@@ -10,8 +9,7 @@ Para este proyecto, se requiere lo siguiente:
 
 - [Python >= 3.7](https://www.python.org/downloads/)
 - [pip](https://pip.pypa.io/en/stable/installation/)
-- [PillowWriter](https://pypi.org/project/PillowWriter/) (necesario para generar gifs)
-Para verificar las versiones de Python y pip instaladas, se pueden usar los siguientes comandos en la terminal:
+- [PillowWriter](https://pypi.org/project/PillowWriter/) (para generar gifs)
 - [PowerDEVS](https://sourceforge.net/projects/powerdevs/)
 ```bash
 python --version
@@ -30,16 +28,17 @@ pip install -r requirements.txt
 
 La estructura del proyecto es la siguiente:
 
-- `assets/`: imágenes y videos de las simulaciones.
-- `atomics/`: modelos atómicos de PowerDEVS para el proyecto.
-- `examples/`: modelos PDM de diferentes tableros y configuraciones.
-- `lib/`: archivo.dpl y assets que representan la librería del proyecto para PowerDEVS.
-- `patterns/` archivos .txt que representan diferentes patrones para el juego.
-- `docs/`: documentación del proyecto y guía de uso de 'Settings GoL' herramienta de ayuda para la configuración del proyecto basado en GUI (Graphical User Interface).
-- `gen_pdm.py`: script que permite generar un esquema PDM de tamaño NxM listo para ser ejecutado, evitando tener que crearlo manualmente.
-- `gui.py` script que permite configurar el proyecto de manera gráfica, se aconseja leer la guía de uso disponible en `docs/guía_de_uso_settings_gol`. ya que entre otras funciones, permite la creación de archivos de configuración de manera visual, asi como también la creación de patrones personalizados y esquemas PDM.
-- `build.sh` script que permite construir el proyecto de manera automática, más abajo se explica, otra opción para buildear el proyecto es utilizar la interfaz gráfica gui.py
-- `restore.sh` script que permite volver PowerDEVS a su versión previa a la instalación del proyecto, esto es útil en caso de que se quiera desinstalar el proyecto.
+- `assets/`: contiene imágenes y gifs de diferentes simulaciones/patrones.
+- `atomics/`: Modelos atómicos de PowerDEVS para el proyecto.
+- `examples/`: Incluye modelos PDM con distintas configuraciones de tableros.
+- `lib/`: Contiene archivos .dpl y assets que constituyen la biblioteca para el proyecto.
+- `patterns/`: Archivos .txt que representan diferentes patrones para el juego.
+- `docs/report.pdf`:Reporte del proyecto, experimentos e instrucciones de uso para la herramienta de configuración 'Settings GoL' en el anexo.
+- `docs/guía_de_uso_settings_gol.pdf`: Guía de uso para la herramienta de configuración 'Settings GoL'
+- `gen_pdm.py`: Script para generar esquemas PDM de tamaño NxM listos para ser ejecutados.
+- `gui.py` Script que permite configurar el proyecto de manera gráfica, se aconseja leer la guía de uso disponible en `docs/guía_de_uso_settings_gol`. ya que entre otras funciones, permite la creación de archivos de configuración de manera visual, asi como también la creación de patrones personalizados y esquemas PDM.
+- `build.sh` Script para construir el proyecto de manera automática.
+- `restore.sh` Script para revertir PowerDEVS a su estado previo a la instalación del proyecto (útil para desinstalar el proyecto).
 
 
 
@@ -51,8 +50,7 @@ El primer paso es clonar este proyecto en su directorio raiz de PowerDevs
     git clone
     ```
 
-Para configurar PowerDEVS y poder hacer uso de este proyecto así como sus ejemplos,librerías y modelos se necesita configurarlo, afortunadamente se provee un script que facilita este proceso por usted `build.sh`. Asegúrate de tener los permisos necesarios para ejecutar este script. Si no es así, puedes cambiar los permisos con el siguiente comando:
-
+Para preparar PowerDEVS para este proyecto, necesitarás configurarlo. Para facilitar este proceso, proporcionamos un script build.sh. Asegúrate de tener los permisos necesarios para ejecutarlo. Si no, puedes cambiar los permisos con:
 ```bash
 chmod +x build.sh
 ```
@@ -75,8 +73,10 @@ Este proceso también puede ser realizado de manera gráfica utilizando el scrip
 
 ## Uso 
 
-El estado inicial se obtiene de un archivo.txt, una vez seteado el proyecto, encontrará en su raiz del directorio de PowerDEVS una carpeta llamada "patterns", dentro de la misma diferentes patrones/archivos.txt, el Mediator recibe como 1er parámetro el nombre del archivo/input el cuál tiene el siguiente formato:
+#### Estado Inicial
+El estado inicial del juego se establece a partir de un archivo .txt. En la carpeta "patterns" del directorio raíz de PowerDEVS encontrarás varios patrones en formato .txt que puedes usar.
 
+Formato:
 ```
 <cantidad de filas>
 <cantidad de columnas>
@@ -97,10 +97,37 @@ Por ejemplo, un blinker en un 3x3 se vería de la siguiente manera:
 3
 ```
 
-Puesto que la creación de patrones en este formato puede ser un proceso laborioso, especialmente para tableros de grandes dimensiones, proveemos una pestaña dentro de la herramienta de ayuda "settings GoL' que permite la creación de patrones de manera visual,
+Puesto que la creación de patrones en este formato puede ser un proceso laborioso, especialmente para tableros de grandes dimensiones, para crear patrones de manera visual y exportarlos en el formato correcto, puedes usar la herramienta de configuración 'Settings GoL'.
+
+![settings gol pestaña creación de estado](report/readme_imgs/create_state.png)
+
+Nota: Para más información sobre la herramienta de ayuda, se provee una guía de uso en `docs/guía_de_uso_settings_gol.pdf`
+
+#### Visualización.
+
+El modelo atómico Mediator en su segundo parámetro recibe el nombre del archivo de salida, el mismo se guarda en la carpeta raiz de PowerDevs/output/gol/nombreArchivoSalida.log, el mismo tiene el siguiente formato:
+
+```
+Generación: 0
+<tablero>
+Generación: 1
+<tablero>
+.
+.
+.
+Generación: n
+<tablero>
+```
+
+Si bien es posible visualizarlo al tablero, para una mejor visualización se provee el script `plotter.py` que permite generar un gif a partir del archivo de salida, para ello:
+
+```bash
+python plotter.py -N <número de filas> -M <número de columnas> -i <archivo a plotear> -o <nombre del gif>
+```
 
 
+## Reporte
 
-
+En el archivo 'report.pdf' dentro de la carpeta 'docs' encontrarás un análisis detallado de los experimentos más interesantes llevados a cabo durante este proyecto, así como también la especificación DEVS de los modelos y su implementación en PowerDEVS, en el anexo del mismo se encuentra la guía de uso para la herramienta de configuración 'Settings GoL'.
 
 
