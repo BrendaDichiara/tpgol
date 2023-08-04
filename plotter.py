@@ -26,7 +26,8 @@ def read_file(file_name):
     list
         A list of boards, where each board is a numpy array.
   """
-  file_name = f'../output/gol/{file_name}.log'
+  #file_name = f'../output/gol/{file_name}.log'
+  file_name = f'logs/{file_name}.log'
   with open(file_name, 'r') as file:
     lines = file.readlines()
 
@@ -48,11 +49,9 @@ def read_file(file_name):
   return boards
 
 def plot_simulation():
-
   """
      This function reads the simulation boards from an input file and plots them as an animation.
   """
- 
   boards = read_file(args.input_file)
   fig, ax = plt.subplots()
 
