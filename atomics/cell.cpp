@@ -36,6 +36,7 @@ else {
         state[LIFE_STATE] = ALIVE;  // Cell becomes alive 
 }
 
+// Optimization: do not send info if there is no change
 if (game->board[cid] == state[LIFE_STATE])
 	sigma = inf;
 else

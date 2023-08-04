@@ -94,14 +94,12 @@ class Application:
         self.label_status.grid(row=1, column=3, padx=5, pady=5)  
 
 
-        # Add buttons to tab 3
         self.button_set_powerdevs = tk.Button(self.tab3, text='Setear PowerDEVS', command=self.set_powerdevs)
         self.button_reset_original = tk.Button(self.tab3, text='Restablecer a versión Original', command=self.reset_original)
 
         self.button_set_powerdevs.pack()
         self.button_reset_original.pack()
 
-        # Bind the tab selected event
         self.tab_control.bind("<<NotebookTabChanged>>", self.tab_changed)
 
         self.tab_control.pack(expand=1, fill='both')
@@ -145,17 +143,13 @@ class Application:
         guide_button.pack()
         about_button.pack()
 
-    # Functions for the Help window buttons
     def open_help(self):
         print("Opening help...")
-        # Replace with the web address of your user guide
         webbrowser.open('https://www.google.com')
 
     def open_about(self):
         print("Opening about...")
-        # Add your code here
 
-    # Function to handle tab change
     def tab_changed(self, event):
         selected_tab = event.widget.select()
         tab_text = event.widget.tab(selected_tab, "text")

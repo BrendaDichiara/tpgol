@@ -34,7 +34,7 @@ Coupled
                 }
             Parameters
                 {
-                input = Str; initial ; filename
+                input = Str; blinker ; filename
                 output = Str; default ; filename
                 }
             }

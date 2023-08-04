@@ -6,7 +6,7 @@ mkdir -p ../output/gol
 
 cp atomics/* ../atomics/gol
 cp examples/* ../examples/gol
-cp -r patterns/* ../patterns
+find patterns/* -type f -exec cp {} ../patterns \;
 cp lib/* ../library/gol
 cp logs/* ../output/gol
 

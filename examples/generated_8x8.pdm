@@ -34,7 +34,7 @@ Coupled
                 }
             Parameters
                 {
-                input = Str; initial ; filename
+                input = Str; glider ; filename
                 output = Str; default ; filename
                 }
             }

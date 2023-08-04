@@ -30,38 +30,37 @@ La estructura del proyecto es la siguiente:
 
 - `assets/`: Contiene imágenes y gifs de diferentes simulaciones/patrones.
 - `atomics/`: Modelos atómicos de PowerDEVS para el proyecto.
-- `examples/`: Incluye modelos PDM con distintas configuraciones de tableros.
-- `lib/`: Contiene archivos .dpl y assets que constituyen la biblioteca para el proyecto.
-- `patterns/`: Archivos .txt que representan diferentes patrones para el juego.
-- `docs/report.pdf`:Reporte del proyecto, experimentos e instrucciones de uso para la herramienta de configuración 'Settings GoL' en el anexo.
-- `gen_pdm.py`: Script para generar esquemas PDM de tamaño NxM listos para ser ejecutados.
-- `gui.py` Script que permite configurar el proyecto de manera gráfica.
+- `examples/`: Incluye modelos PDM con distintas configuraciones de tableros listos para ser ejecutados.
+- `lib/`: Contiene gol.dpl y assets que constituyen la biblioteca del proyecto.
+- `patterns/`: Archivos .txt categorizados, que representan diferentes patrones para el juego.
+- `report.pdf`: Reporte del proyecto, especificación DEVS, experimentos e instrucciones de uso para la herramienta de configuración 'Settings GoL' en el anexo.
+- `gen_template.py`: Script para generar esquemas PDM de tamaño NxM listos para ser ejecutados.
+- `gui.py` Script que permite configurar el proyecto de manera visual (GUI).
+- `plotter.py` Script que permite generar animaciones a partir de un archivo de salida.
 - `build.sh` Script para construir el proyecto de manera automática.
 - `restore.sh` Script para revertir PowerDEVS a su estado previo a la instalación del proyecto (útil para desinstalar el proyecto).
-
 
 
 ## Configuración del Entorno
 
 El primer paso es clonar este proyecto en su directorio raiz de PowerDevs 
-    
-    ```bash
-    git clone
-    ```
+```
+ss
+```
 
-Para preparar PowerDEVS para este proyecto, necesitarás configurarlo. Para facilitar este proceso, proporcionamos un script build.sh. Asegúrate de tener los permisos necesarios para ejecutarlo. Si no, puedes cambiar los permisos con:
+Para preparar PowerDEVS necesitarás configurarlo. Para facilitar este proceso, proporcionamos el script build.sh. Asegúrate de tener los permisos necesarios para ejecutarlo. Si no, puedes hacerlo de la siguiente manera:
 ```bash
 chmod +x build.sh
 
 ./build.sh
 ```
 El script realiza por usted (entre otras cosas) las siguientes configuraciones:
-- Incorpora la libreria del proyecto a PowerDEVS, la misma tiene el nombre de "Game of Life" en la misma se encuentran los modelos atómicos, asi como también ejemplos de tableros de tamaños NxM (3x3),(5x5),(8x8),(25x38) listos para ser ejecutados.
+- Incorpora la libreria del proyecto a PowerDEVS, la misma tiene el nombre de "Game of Life" en la misma se encuentran los modelos atómicos, asi como también ejemplos de tableros de tamaños NxM (3x3),(5x5),(8x8) listos para ser ejecutados.
 - Incorpora los modelos atómicos cell, mediator así como utilidades necesarias.
-- Incorpora una carpeta patterns que contiene patrones de ejemplo listos para ser cargados en la simulación que usted desee.
-- Incorpora una carpeta examples que contiene modelos PDM de ejemplo listos para ser ejecutados.
+- Crea una carpeta patterns en la raiz de PowerDEVS que contiene patrones de ejemplo listos para ser cargados en la simulación que usted desee.
+- Añade una carpeta examples que contiene modelos PDM de ejemplo listos para ser ejecutados.
 
-Si por algun motivo desea desinstalar el proyecto, se provee un script que permite volver PowerDEVS a su estado previo a la instalación del proyecto, para ello:
+Si por algun motivo desea desinstalar el proyecto, se provee un script que permite volver PowerDEVS a su estado previo a la instalación del mismo, para ello:
 
 ```bash
 chmod +x restore.sh
@@ -76,7 +75,7 @@ Este proceso también puede ser realizado de manera gráfica utilizando el scrip
 
 ## Uso 
 
-#### Estado Inicial
+### Estado Inicial
 El estado inicial del juego se establece a partir de un archivo .txt. En la carpeta "patterns" del directorio raíz de PowerDEVS encontrarás varios patrones en formato .txt que puedes usar.
 
 Formato:
@@ -106,13 +105,14 @@ Puesto que la creación de patrones en este formato puede ser un proceso laborio
 
 Nota: Para más información sobre la herramienta de ayuda, se provee una guía de uso en el anexo del reporte.
 
-#### Visualización.
+### Visualización.
 
-El modelo atómico Mediator en su segundo parámetro recibe el nombre del archivo de salida, el mismo se guarda en la carpeta raiz de PowerDevs/output/gol/nombreArchivoSalida.log, el mismo tiene el siguiente formato:
+El modelo atómico Mediator en su segundo parámetro recibe el nombre del archivo de salida, el mismo se guarda en la carpeta raiz de PowerDevs/output/nombreArchivoSalida.log, el cual cuenta con el siguiente formato:
 
 ```
 MEDIATOR: Tablero
 <tablero> 1
+
 MEDIATOR: Tablero
 <tablero> 2
 .
@@ -120,16 +120,17 @@ MEDIATOR: Tablero
 .
 ```
 
-Si bien es posible leer el tablero en el registro mismo que se guarda en output/,  para una mejor visualización se provee el script `plotter.py` que permite generar un gif a partir del archivo de salida con matplotlib, para ello:
+Si bien es posible leer el tablero en el registro mismo que se guarda en output/,  para una mejor visualización se provee el script `plotter.py` que permite generar un gif a partir del archivo de salida con matplotlib, para ello se utiliza el siguiente comando:
 
 ```bash
 python plotter.py -i <archivo a plotear> -o <nombre del archivo de salida>
 ```
+Nota: los parámetros -i y -o son requeridos.
 
 
 ## Tableros de gran tamaño, conexiones, esquemas PDM
 
-Crear las conexiones entre células y mediator es todo un desafio a medida que el tablero crece en dimensiones. Para facilitar este proceso, la herramienta proporciona una funcionalidad para generar automáticamente esquemas PDM de dimensiones NxM listos para ser ejecutados en PowerDEVS.
+Crear las conexiones entre células y mediator es todo un desafio a medida que el tablero crece en dimensiones. Para facilitar este proceso, la herramienta visual proporciona una funcionalidad que permite generar automáticamente esquemas PDM de dimensiones NxM con las conexiones necesarias.
 
 Ingrese las dimensiones deseadas en los campos de texto proporcionados y haga clic en el botón "Generar PDM". La herramienta generará automáticamente un archivo PDM con un esquema de las dimensiones especificadas.
 
@@ -138,6 +139,6 @@ Ingrese las dimensiones deseadas en los campos de texto proporcionados y haga cl
 
 ## Reporte
 
-En el archivo 'report.pdf' dentro de la carpeta 'docs' encontrarás un análisis detallado de los experimentos más interesantes llevados a cabo durante este proyecto, así como también la especificación DEVS de los modelos y su implementación en PowerDEVS, en el anexo del mismo se encuentra la guía de uso para la herramienta de configuración 'Settings GoL'.
+En el archivo 'report.pdf'  encontrarás un análisis detallado de los experimentos más interesantes llevados a cabo durante este proyecto, así como también la especificación DEVS de los modelos y su implementación en PowerDEVS, en el anexo del mismo se encuentra la guía de uso para la herramienta de configuración 'Settings GoL'.
 
 
