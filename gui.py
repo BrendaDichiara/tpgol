@@ -7,6 +7,8 @@ class Grid:
     def __init__(self, master, rows, cols):
         self.rows = rows
         self.cols = cols
+        self.survivor_rules = 23
+        self.birth_rules = 3
         self.cells = [[0 for _ in range(cols)] for _ in range(rows)]
         self.buttons = [[None for _ in range(cols)] for _ in range(rows)]
         self.frame = tk.Frame(master)
@@ -31,6 +33,8 @@ class Grid:
                 for j in range(self.cols):
                     file.write(str(self.cells[i][j]))
                 file.write('\n')
+            file.write(str(self.survivor_rules) + '\n')
+            file.write(str(self.birth_rules))
 
 
 
@@ -53,8 +57,14 @@ class Application:
 
         self.label_rows = tk.Label(self.tab1, text="Filas (N):")
         self.label_cols = tk.Label(self.tab1, text="Columnas (N):")
+        self.label_survivor_rules = tk.Label(self.tab1, text="Reglas de supervivencia:")
+        self.label_birth_rules = tk.Label(self.tab1, text="Reglas de nacimiento:")
         self.entry_rows = tk.Entry(self.tab1)
         self.entry_cols = tk.Entry(self.tab1)
+        self.entry_survivor_rules = tk.Entry(self.tab1)
+        self.entry_survivor_rules.insert(0, "23")
+        self.entry_birth_rules = tk.Entry(self.tab1)
+        self.entry_birth_rules.insert(0, "3")
         self.button_create = tk.Button(self.tab1, text='Crear cuadrícula', command=self.create_grid)
         self.button_export = tk.Button(self.tab1, text='Exportar estado ', command=self.export_grid)
         
@@ -69,6 +79,10 @@ class Application:
         self.label_cols.grid(row=0, column=1, padx=5, pady=5)
         self.entry_rows.grid(row=1, column=0, padx=5, pady=5)
         self.entry_cols.grid(row=1, column=1, padx=5, pady=5)
+        self.label_survivor_rules.grid(row=3, column=0, padx=5, pady=5)
+        self.label_birth_rules.grid(row=3, column=1, padx=5, pady=5)
+        self.entry_survivor_rules.grid(row=4, column=0, padx=5, pady=5)
+        self.entry_birth_rules.grid(row=4, column=1, padx=5, pady=5)
         self.button_create.grid(row=1, column=2, padx=5, pady=5)
         self.button_export.grid(row=1, column=3, padx=5, pady=5)
         
@@ -101,6 +115,8 @@ class Application:
 
     def export_grid(self):
         if self.grid is not None:
+            self.grid.survivor_rules = int(self.entry_survivor_rules.get())
+            self.grid.birth_rules = int(self.entry_birth_rules.get())
             self.grid.export()
 
     def generate_pdm(self, N, M):
