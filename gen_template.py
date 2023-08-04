@@ -41,7 +41,8 @@ Coupled
                 }}
             Parameters
                 {{
-                filename = Str; initial ; str
+                input = Str; initial ; filename
+                output = Str; default ; filename
                 }}
             }}
     """
