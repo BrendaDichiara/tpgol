@@ -145,7 +145,7 @@ class Application:
 
     def open_help(self):
         print("Opening help...")
-        webbrowser.open('https://www.google.com')
+        
 
     def open_about(self):
         print("Opening about...")
