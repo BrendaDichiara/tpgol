@@ -53,6 +53,8 @@ El primer paso es clonar este proyecto en su directorio raiz de PowerDevs
 Para preparar PowerDEVS para este proyecto, necesitarás configurarlo. Para facilitar este proceso, proporcionamos un script build.sh. Asegúrate de tener los permisos necesarios para ejecutarlo. Si no, puedes cambiar los permisos con:
 ```bash
 chmod +x build.sh
+
+./build.sh
 ```
 El script realiza por usted (entre otras cosas) las siguientes configuraciones:
 - Incorpora la libreria del proyecto a PowerDEVS, la misma tiene el nombre de "Game of Life" en la misma se encuentran los modelos atómicos, asi como también ejemplos de tableros de tamaños NxM (3x3),(5x5),(8x8),(25x38) listos para ser ejecutados.
@@ -64,6 +66,8 @@ Si por algun motivo desea desinstalar el proyecto, se provee un script que permi
 
 ```bash
 chmod +x restore.sh
+
+./restore.sh
 ```
 Este proceso también puede ser realizado de manera gráfica utilizando el script `gui.py`
 
