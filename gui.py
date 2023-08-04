@@ -56,7 +56,7 @@ class Application:
         self.entry_rows = tk.Entry(self.tab1)
         self.entry_cols = tk.Entry(self.tab1)
         self.button_create = tk.Button(self.tab1, text='Crear cuadrícula', command=self.create_grid)
-        self.button_export = tk.Button(self.tab1, text='Exportar txt', command=self.export_grid)
+        self.button_export = tk.Button(self.tab1, text='Exportar estado ', command=self.export_grid)
         
         self.label_rows_2 = tk.Label(self.tab2, text="Filas (N):")
         self.label_cols_2 = tk.Label(self.tab2, text="Columnas (N):")
@@ -148,7 +148,7 @@ class Application:
             self.open_help_window()
 
 root = tk.Tk()
-root.title("PowerDEVS - Game of Life Configuration") 
+root.title("PowerDEVS - Settings Game of Life (GoL)") 
 app = Application(root)
 root.mainloop()
 
