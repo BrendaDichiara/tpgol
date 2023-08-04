@@ -3,16 +3,26 @@ import matplotlib.pyplot as plt
 import matplotlib.animation as animation
 import numpy as np
 
-# Parse the command line arguments.
-parser = argparse.ArgumentParser()
-parser.add_argument("-N", "--N", type=int, help="The number of rows in board.")
-parser.add_argument("-M", "--M", type=int, help="The number of columns in board.")
-parser.add_argument("-i", "--input_file", type=str, help="The name of the input file.")
-parser.add_argument("-o", "--output_file", type=str, help="The name of the output file.")
-parser.add_argument("-p", "--plot_or_gif", type=str, choices=['plot', 'gif'], help="Specify 'plot' to generate a plot, 'gif' to generate a gif")
 
-args = parser.parse_args()
 
+def parse_args():
+    """
+    This function parses the command-line arguments.
+
+    Returns:
+    Namespace
+        The parsed command-line arguments.
+    """
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-N", "--N", type=int, help="The number of rows in board.")
+    parser.add_argument("-M", "--M", type=int, help="The number of columns in board.")
+    parser.add_argument("-i", "--input_file", type=str, help="The name of the input file.")
+    parser.add_argument("-o", "--output_file", type=str, help="The name of the output file.")
+    parser.add_argument("-p", "--plot_or_gif", type=str, choices=['plot', 'gif'], help="Specify 'plot' to generate a plot, 'gif' to generate a gif")
+    
+    return parser.parse_args()
+
+args = parse_args()
 
 def read_file(file_name):
   """
@@ -69,6 +79,10 @@ def plot_simulation():
   def animate(i):
     im.set_array(boards[i])  
     ax.set_title(f"Gen {i}")  
+    if i < 4:
+        filename = f"{args.input_file}_{i}.png"    
+        plt.savefig(filename, bbox_inches='tight')
+
 
   ani = animation.FuncAnimation(fig, animate, frames=len(boards), interval=1000, repeat=False)
   
