@@ -4,3 +4,4 @@ rm -rf ../atomics/gol
 rm -rf ../examples/gol
 rm -rf ../patterns
 rm -rf ../library/gol
+rm -rf ../output/gol
