@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1691145845 "/home/brend/powerdevs-docker/tpgol/report/report.tex" "report.pdf" "report" 1691145846
+["pdflatex"] 1691147356 "/home/brend/powerdevs-docker/tpgol/report/report.tex" "report.pdf" "report" 1691147357
   "../assets/oscillator/blinker/blinker.png" 1690958696 38421 1640ef1618d62cbc7e1975493e28d3d4 ""
   "../assets/oscillator/mazing/mazing.jpg" 1690961189 130093 53151a5e7eac177869656208880a9181 ""
   "../assets/oscillator/octagon_2/octagon_2.png" 1690960091 128602 cbe9e50436a04b8a5e8fd3805f5106c3 ""
@@ -15,10 +15,10 @@
   "../assets/space_ships/MWSS/MWSS.png" 1691005796 59682 2343068a026816964fc3f62986231228 ""
   "../assets/space_ships/glider/glider_12.jpg" 1691000385 249650 8e26e79d106d4586a54d310276521d8e ""
   "../assets/space_ships/glider/glider_12_24.jpg" 1691000385 256332 64551e3343b6980dea13c21e1e3f07ed ""
-  "../assets/still_life/block/block.png" 1690955188 25835 502318c12ae40cae83e24613e15c686b ""
-  "../assets/still_life/honeycomb/honeycomb.png" 1690955156 26124 1840fd1713aeb6b4691a03daeb7fa4d4 ""
-  "../assets/still_life/integral/integral.png" 1690955012 25266 de69b3e7723e45ff4d0df11c6ed882e4 ""
-  "../assets/still_life/ship/ship.png" 1690954897 25752 5cef52eda6017c5ce89badf45f74046d ""
+  "../assets/still_life/block/block.png" 1691146994 24706 deef0ca7747a49bd34e89ebdb4ecae78 ""
+  "../assets/still_life/honeycomb/honeycomb.png" 1691147052 24468 c043fac04d768682f0d4d80d0605e828 ""
+  "../assets/still_life/integral/integral.png" 1691147108 24187 c33d3025b075894af689d1697012b62a ""
+  "../assets/still_life/ship/ship.png" 1691147147 24194 7961f4492c2764a8e083201c397cc261 ""
   "/etc/texmf/web2c/texmf.cnf" 1690480281 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/brend/powerdevs-docker/tpgol/report/report.tex" 1691145845 21763 917aa6c9f157e0aefd7a60015a4db620 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -238,7 +238,7 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1690481306 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1690481335 2802272 99ec36cbaf647683cdb6d0f43e952e7c ""
-  "report.aux" 1691145846 6166 3b3faa301b599bd98c21925dbd969c12 "pdflatex"
+  "report.aux" 1691147357 6166 3b3faa301b599bd98c21925dbd969c12 "pdflatex"
   "report.tex" 1691145845 21763 917aa6c9f157e0aefd7a60015a4db620 ""
   (generated)
   "report.aux"
