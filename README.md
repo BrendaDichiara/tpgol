@@ -34,9 +34,8 @@ La estructura del proyecto es la siguiente:
 - `lib/`: Contiene archivos .dpl y assets que constituyen la biblioteca para el proyecto.
 - `patterns/`: Archivos .txt que representan diferentes patrones para el juego.
 - `docs/report.pdf`:Reporte del proyecto, experimentos e instrucciones de uso para la herramienta de configuración 'Settings GoL' en el anexo.
-- `docs/User_Guide_Settings_gol.pdf`: Guía de uso para la herramienta de configuración 'Settings GoL'
 - `gen_pdm.py`: Script para generar esquemas PDM de tamaño NxM listos para ser ejecutados.
-- `gui.py` Script que permite configurar el proyecto de manera gráfica, se aconseja leer la guía de uso disponible en `docs/User_Guide_Settings_gol.pdf`. ya que entre otras funciones, permite la creación de archivos de configuración de manera visual, asi como también la creación de patrones personalizados y esquemas PDM.
+- `gui.py` Script que permite configurar el proyecto de manera gráfica.
 - `build.sh` Script para construir el proyecto de manera automática.
 - `restore.sh` Script para revertir PowerDEVS a su estado previo a la instalación del proyecto (útil para desinstalar el proyecto).
 
@@ -105,7 +104,7 @@ Puesto que la creación de patrones en este formato puede ser un proceso laborio
 
 ![settings gol pestaña creación de estado](assets/gui/pestania2.png)
 
-Nota: Para más información sobre la herramienta de ayuda, se provee una guía de uso en `docs/User_Guide_Settings_gol.pdf`.
+Nota: Para más información sobre la herramienta de ayuda, se provee una guía de uso en el anexo del reporte.
 
 #### Visualización.
 
