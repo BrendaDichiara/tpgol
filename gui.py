@@ -25,12 +25,13 @@ class Grid:
     def export(self):
         filename = filedialog.asksaveasfilename(defaultextension=".txt", filetypes=(("Text file", "*.txt"),("All Files", "*.*")))
         with open(filename, 'w') as file:
-            file.write(str(self.rows) + '\\n')
-            file.write(str(self.cols) + '\\n')
+            file.write(str(self.rows) + '\n')
+            file.write(str(self.cols) + '\n')
             for i in range(self.rows):
                 for j in range(self.cols):
                     file.write(str(self.cells[i][j]))
-                file.write('\\n')
+                file.write('\n')
+
 
 
 class Application:
