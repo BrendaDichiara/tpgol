@@ -66,7 +66,8 @@ Es importante señalar que la mayoría de las $2^18$ posibles reglas del espacio
 
 El propósito de este proyecto es explorar la dinámica del juego de una manera visual e interactiva. Para ello, se implementará el juego en PowerDEVS, una herramienta de simulación de eventos discretos basada en la teoría DEVS (Discrete Event System Specification).
 
-\section{Especificación DEVS de una celda}
+\section{Especificación DEVS de una celda}\label{sec:esp}
+
 
 El DEVS que representa únicamente a una célula se define como sigue:
 
@@ -175,6 +176,57 @@ La especificación DEVS del \textit{Mediator} se puede describir como:
 % Aquí puedes detallar cómo especificaste una celda del juego en DEV
 \section{Implementación en PowerDEVS}
 % En esta sección puedes describir los patrones que has implementado.
+En PowerDEVS, el juego de la vida se implementa utilizando dos componentes clave: una entidad denominada 'célula' y un patrón de diseño denominado 'mediator'. Ambos son modelos atómicos y sus relaciones e interacciones definen el estado y el comportamiento del juego.
+
+La célula se implementa como un modelo atómico simple con una única entrada y salida. Cada célula es una entidad única que cuenta con un identificador único que la representa en el tablero. Por otro lado, el Mediator es un modelo que juega un papel crucial para coordinar y gestionar las interacciones entre estas células.
+
+El Mediator, también implementado como un modelo atómico, desempeña un papel central en la coordinación y el control de las interacciones entre las células. Este componente no solo gestiona las relaciones entre las células, sino que también es responsable de inicializarlas. El Mediator recibe como parámetro el nombre del archivo que contiene el estado inicial del tablero asi como las reglas de supervivencia y nacimiento (1er parámetro). Además una de las funcionalidades importantes del Mediator es que permite definir el nombre de archivo de salida (2do parámetro), en el mismo se registra el estado del tablero del juego en cada generación, facilitando su exportación y visualización en formatos como gif, mp4 o png.
+
+En la Figura \ref{fig:cell_mediator} a la izquierda se muestra la representación de una célula como un modelo atómico, y a la derecha, el Mediator.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{../assets/pdevs/mediator_cell.png}
+  \caption{El Mediator y la Célula como modelos atómicos en PowerDEVS.}
+  \label{fig:cell_mediator}
+\end{figure}
+
+El trabajo conjunto de estas dos entidades da lugar a la dinámica del juego. A través del Mediator, el juego inicializa y coordina el estado de las células, gestionando su comportamiento a lo largo de cada generación. En la siguiente imagen, se proporcionará un ejemplo de un tablero de 3x3 inicializado por un Mediator, ilustrando cómo se interconectan múltiples células y cómo el Mediator permite que cada célula sea independiente de las demás, es decir, no se comunican directamente entre ellas.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\textwidth]{../assets/pdevs/3x3_board.png}
+  \caption{Tablero de ejemplo 3x3.}
+  \label{fig:board}
+\end{figure}
+
+También se incorporó al proyecto una librería, en la misma se pueden encontrar los modelos atómicos anteriormente mencionados en las \ref{fig:cell_mediator} y \ref{fig:board}, así como también varios modelos de tableros de ejemplo, como se puede observar en la figura \ref{fig:library}.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.3\textwidth]{../assets/pdevs/library.png}
+  \caption{Librería}
+  \label{fig:library}
+\end{figure}
+
+\subsection{Automatización y Personalización de Tableros}
+
+Entendemos que la creación de tableros personalizados en PowerDEVS puede ser un proceso laborioso, especialmente para tableros de grandes dimensiones. Para facilitar este proceso, hemos desarrollado una herramienta de ayuda basada en una interfaz gráfica de usuario (GUI) implementada en Python.
+
+Esta herramienta, que hemos llamado 'Settings GoL', permite generar tableros de dimensiones NxM en formato PDM, los cuales pueden ser utilizados directamente en PowerDEVS. El proceso es sencillo e intuitivo, y reduce significativamente el tiempo y el esfuerzo requeridos para la configuración de tableros personalizados.
+
+En la Figura \ref{fig:settingsdevs}, se muestra una vista previa de la interfaz de Settings GoL y de algunas de sus funcionalidades.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=1\textwidth]{../assets/pdevs/SettingsDevs.png}
+  \caption{Vista previa de Settings GoL, pestaña generador de tableros PDM.}
+  \label{fig:settingsdevs}
+\end{figure}
+
+Para un entendimiento completo de cómo utilizar esta herramienta y sus otras funcionalidades se ha elaborado una guía detallada de uso que se encuentra en el anexo de este informe.
+
+
 \section{Patrones}
 El Juego de la Vida, concebido por el matemático británico John Horton Conway, es famoso por la vasta variedad de patrones que emergen de sus simples reglas, en particular, las reglas 23/3. Los patrones se definen como configuraciones de células que se repiten tras un número determinado de generaciones, también conocido como su "periodo". Los patrones pueden ser estáticos, oscilantes o móviles, dependiendo de cómo cambian a lo largo del tiempo. En las secciones siguientes se presentarán ejemplos de estos patrones bajo las reglas 23/3.
 
