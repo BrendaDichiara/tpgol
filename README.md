@@ -45,7 +45,7 @@ La estructura del proyecto es la siguiente:
 
 El primer paso es clonar este proyecto en su directorio raiz de PowerDevs 
 ```
-ss
+git clone https://github.com/BrendaDichiara/tpgol.git
 ```
 
 Para preparar PowerDEVS necesitarás configurarlo. Para facilitar este proceso, proporcionamos el script build.sh. Asegúrate de tener los permisos necesarios para ejecutarlo. Si no, puedes hacerlo de la siguiente manera:
