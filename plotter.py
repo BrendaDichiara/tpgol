@@ -30,8 +30,14 @@ def get_board_dimensions(input_file_path):
         lines = file.readlines()
 
     start_index = lines.index("MEDIATOR: Tablero\n") + 1
-    stop_index = lines.index("MEDIATOR: Tablero\n", start_index)
 
+    # Inicializar el índice de parada con el mismo valor que el índice de inicio
+    stop_index = start_index
+
+    # Mientras la longitud de la línea actual sea igual a la longitud de la primera línea del tablero, incrementar el índice de parada en uno
+    while stop_index < len(lines) and lines[stop_index] != "MEDIATOR: Tablero\n":
+        stop_index += 1
+    
     N = stop_index - start_index
     M = len(lines[start_index].split())
 
